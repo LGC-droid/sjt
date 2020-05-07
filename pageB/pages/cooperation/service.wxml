@@ -1,0 +1,45 @@
+<view class="head">
+	<image src="../../img/label.png" class="label"></image>
+	<text class="information">联系信息</text>
+</view>
+<!-- <picker mode="region"  bindchange="address" value="{{address}}" custom-item="{{customItem}}">
+	<view class="demo">
+		<image src="../../img/mi.png" class="mi"></image>
+		<view class="name">城市</view>
+		<view class="picker">
+			{{address[0]}}/{{address[1]}}/{{address[2]}}
+		</view>
+		<image src="../../../imgs/return2.png" class="choice"></image>
+	</view>
+</picker> -->
+<view class="demo" >
+		<image src="../../img/mi.png" class="mi"></image>
+		<view class="name">代理城市</view>
+		<input class="inp" placeholder="请输入详细地址" value="{{name}}" bindchange="address" value="{{address}}"></input>
+		<!-- <image src="../../../imgs/return2.png" class="choice"></image> -->
+	</view>
+<view class="demo">
+	<image src="../../img/mi.png" class="mi"></image>
+	<view class="name">联系人姓名</view>
+	<input class="inp" placeholder="请输入联系人姓名" value="{{name}}" bindinput='name'></input>
+</view>
+<view class="demo">
+	<image src="../../img/mi.png" class="mi"></image>
+	<view class="name">联系方式</view>
+	<input class="inp" type="number" placeholder="请输入联系方式" value="{{phone}}" bindinput='phone'></input>
+</view>
+<view class="demo">
+	<image src="../../img/mi.png" class="mi"></image>
+	<view class="name">微信联系方式</view>
+	<input class="inp" placeholder="请输入微信联系方式" value="{{wechat_number}}" bindinput='wechat_number'></input>
+</view>
+<view class="demos">
+	<image src="../../img/mi.png" class="mi"></image>
+	<view class="name">其他描述</view>
+</view>
+<!-- <wux-cell hover-class="none">
+	<wux-textarea hasCount rows="3" value="{{describe}}" controlled="true" bindinput='describe'  wux-class="txt" cursorSpacing="80" placeholder="请输入..." />
+</wux-cell> -->
+<textarea value="{{describe}}"  bindinput='describe'  class="txt" placeholder="请输入"></textarea>
+<button class="sub" bindtap="tijiao">提交</button>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

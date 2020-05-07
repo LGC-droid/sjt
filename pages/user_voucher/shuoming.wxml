@@ -1,0 +1,7 @@
+<navbar parameter='{{parameter}}'></navbar>
+<template is="wxParse" data="{{wxParseData:content.nodes}}" />
+<!-- html转wxml -->
+<import src="/wxParse/wxParse.wxml" />
+<view wx:if="{{!is_gonglue}}">
+	<button bindtap="distribution" class="share">我已知晓</button>
+</view>

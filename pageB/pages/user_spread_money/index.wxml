@@ -1,0 +1,15 @@
+<view class="heads">佣金累计 ￥ {{recordCount}}</view>
+<view class="neck">
+	<view class="time">时间</view>
+	<view class="grade">会员等级</view>
+	<view class="money">金额</view>
+</view>
+<view wx:for="{{recordList}}" wx:key>
+	<view class="demo">
+		<view class="times">{{item.createtime}}</view>
+		<view class="grades">{{item.memo}}</view>
+		<view class="moneys" wx:if="{{item.type == 1}}">+{{item.money}}</view>
+		<view class='moneys' wx:else>-{{item.money}}</view>
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize",
+    "navbar": "/components/navbar/index"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "佣金明细"
+}

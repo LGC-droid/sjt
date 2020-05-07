@@ -1,0 +1,25 @@
+<template name="sort_list">
+  <view class="sort-list">
+
+    <!-- <view data-index="0" class="tjsj {{selected == 0?'sort-active':''}}">
+      推荐商家
+    </view> -->
+
+
+
+    <!-- <view class="waibiank2"> -->
+    <view data-index="1" bindtap="onTapTag" class="sort  {{selected == 1?'sort-active':''}}">
+      距离最近
+    </view>
+        <!-- </view> -->
+           <!-- <view class="waibiank"> -->
+    <view data-index="2" bindtap="onTapTag" class="sort  {{selected == 2?'sort-active':''}}">
+      佣金最高
+    </view>
+    <!-- </view> -->
+    <view class="sort" bindtap="onOverallTag">{{sortSelected}}
+      <image src="/imgs/down.png" style="width:20rpx;height:20rpx;"></image> 
+    </view>
+
+  </view>
+</template>

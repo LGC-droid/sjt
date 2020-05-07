@@ -1,0 +1,51 @@
+/* pages/reward/reward.wxss */
+.accumulation {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  text-align: right;
+  margin-right: 36rpx;
+}
+
+.imgs {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 35rpx;
+
+}
+
+.demo {
+  display: flex;
+  width: 100%;
+  height: 160rpx;
+  background: white;
+  align-items: center;
+  position: relative;
+  border-bottom: 1rpx solid #DBCBCB;
+}
+
+.demo-size {
+  position: absolute;
+  left: 156rpx;
+}
+
+.demo-money {
+  position: absolute;
+  left: 620rpx;
+  font-size: 28rpx;
+  color: #ea1a1a;
+}
+
+.demo-size-mini1 {
+  font-size: 28rpx;
+  color: #101010;
+  font-family: PingFangSC-regular;
+}
+
+.demo-size-mini2 {
+  font-size: 28rpx;
+  color: #807C7C;
+  font-family: PingFangSC-regular;
+  padding-top: 5rpx;
+}

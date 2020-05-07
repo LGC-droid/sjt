@@ -1,0 +1,4 @@
+<navbar parameter='{{parameter}}'></navbar>
+<button bindtap="jumpDetails">打开美团商家</button>
+<button bindtap="jumpDetails2">打开饿了么商家</button>
+<button bindtap="dingyuexiaoxi">发送模板消息测试</button>

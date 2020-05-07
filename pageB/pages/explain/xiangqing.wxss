@@ -1,0 +1,33 @@
+/* pages/explain/xiangqing.wxss */
+
+.heads {
+  /* font-weight: bold; */
+  font-size: 36rpx;
+  margin-left: 30rpx;
+  width: 700rpx;
+  margin-top: 20rpx;
+}
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.writer {
+  font-size: 24rpx;
+  color: #ccc;
+  margin-left: 32rpx;
+}
+
+.press {
+  font-size: 24rpx;
+  margin-left: 32rpx;
+  color: #586a95;
+}
+
+.times {
+  font-size: 24rpx;
+  margin-left: 32rpx;
+}

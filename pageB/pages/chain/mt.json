@@ -1,0 +1,14 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {  
+    "authorize": "/components/authorize/authorize",
+    "i-tab-bar": "../../../pages/dist/tab-bar/index",
+    "i-tab-bar-item": "../../../pages/dist/tab-bar-item/index",
+    "i-tabs": "../../../pages/dist/tabs/index",
+    "i-tab": "../../../pages/dist/tab/index" 
+  },
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#ffd161",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "叮叮饭粒"
+}

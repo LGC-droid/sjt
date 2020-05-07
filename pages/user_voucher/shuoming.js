@@ -1,0 +1,108 @@
+// pages/user_voucher/shuoming.js
+const app = getApp()
+var WxParse = require('../../wxParse/wxParse.js');
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    parameter: {
+      'navbar': '1',
+      'return': '1',
+      'title': '上传凭证说明',
+      'color': false
+    },
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this;
+    app.baseGet(app.U({
+      c: 'Public_api',
+      a: 'shuoming',
+      q: {
+        type: 1
+      }
+    }), function (res) {
+
+
+      if (res.code == 200) {
+        WxParse.setImageDomain(app.globalData.url);
+        WxParse.wxParse('content', 'html', res.data.shuoming.content, that, 0);
+      } else {
+        return app.Tips({
+          title: '没有获取到数据'
+        }, {
+          tab: 3,
+          url: 1
+        });
+      }
+      console.log(app.globalData.is_gonglue)
+      if (app.globalData.is_gonglue) {
+        that.setData({
+          is_gonglue: true
+        })
+      }
+
+    })
+  },
+  distribution() {
+    app.globalData.is_gonglue = true;
+    wx.navigateBack({
+
+      delta: 1 // 1返回上一个界面，2返回上上个页面
+
+    })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

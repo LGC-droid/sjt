@@ -1,0 +1,43 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class="yxms">
+	<view class="yxmsbox">
+		<view style="width:100%;text-align:center;" wx:if="{{list.length==0}}">
+			<image src="/imgs/nocontent.png" style="width:300rpx;height:300rpx;margin-top: 250rpx;"></image>
+		</view>
+		<view bindtap="show" data-tid="{{item.task_id}}" data-sid="{{item.merchant_id}}" data-rate_of_progress="{{item.rate_of_progress}}" data-id="{{item.id}}" wx:for="{{orderInfo}}" wx:key="{{item}}">
+			<view class="yxms-item">
+				<view class="yxms-r">
+					<view class="yxms-title">
+						<view class="name">
+							{{item.task_title}}
+						</view>
+						<view class="pricebox"></view>
+					</view>
+					<view class="yxms-title">
+						<view class="name name2">
+							接单时间：{{item.add_time}}
+						</view>
+					</view>
+					<view class="yxms-title" wx:if="{{item.rate_of_progress==-2}}">
+						<view class="name name2">
+							失败原因：{{item.fail_reason}}
+						</view>
+					</view>
+					<view class="yxms-jianjie">
+						<label class="price">返现金额：￥{{item.total_commission}}</label>
+					</view>
+					<view></view>
+				</view>
+				<image class="state-imgs-top" src="/imgs/state_0.png" wx:if="{{item.rate_of_progress==0}}"></image>
+				<image class="state-imgs-top" src="/imgs/state_1.png" wx:elif="{{item.rate_of_progress==1}}"></image>
+				<image class="state-imgs-top" src="/imgs/state_2.png" wx:elif="{{item.rate_of_progress==2}}"></image>
+				<image class="state-imgs-top" src="/imgs/state_3.png" wx:elif="{{item.rate_of_progress==-1}}"></image>
+				<image class="state-imgs-top" src="/imgs/state_4.png" wx:elif="{{item.rate_of_progress==-2}}"></image>
+			</view>
+			<!-- <view class="yxms-item" wx:if="{{index%5==0}}">
+                <ad unitId="adunit-3a36249ff567428f"></ad>
+            </view> -->
+		</view>
+	</view>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>

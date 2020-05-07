@@ -1,0 +1,112 @@
+<view style="background-color: {{activity.theme_color}}">
+	<image class="banners" src="{{url}}{{activity.pic_image}}"></image>
+	<view class="bodys">
+		<button class="go" style="width:568rpx" bindtap="fenxiang">立即邀请 赚现金</button>
+		<view class="size1">好友下单可获得更高的现金奖励</view>
+		<view class="size1">邀请{{user_msg.extra_bonus_progress[0].wan}}名好友可获得额外红包现金奖励</view>
+		<view class="title1">
+			<image class="left" src="../../img/left.png"></image>
+			<!--------------------------------- 简单5步 立的佣金 ------------------------------------------------>
+			<view class="size2">简单5步 立得现金</view>
+			<image class="right" src="../../img/right.png"></image>
+		</view>
+		<image class="step" src="../../img/step.png"></image>
+		<!--------------------------------- 邀请战绩 ------------------------------------------------>
+		<view class="title2">
+			<image class="left" src="../../img/left.png"></image>
+			<view class="size2">邀请战绩</view>
+			<image class="right" src="../../img/right.png"></image>
+		</view>
+		<!-- <view class="demo">
+		<view class="elastic">
+			<view class="small_demo">
+				<view class="demo_numbers">30</view>
+				<view class="demo_size_head">注册用户 (人)</view>
+			</view>
+			<view class="vertical">|</view>
+			<view class="small_demo">
+				<view class="demo_numbers">18</view>
+				<view class="demo_size">完单用户 (人)</view>
+			</view>
+			<view class="vertical">|</view>
+			<view class="small_demo">
+				<view class="demo_numbers">10</view>
+				<view class="demo_size">获得总奖励 (元)</view>
+			</view>
+		</view>
+		<navigator url="../reward/reward" class="details" style="width:356rpx;">查看详情></navigator> 
+	</view> -->
+		<navigator class="pos" url="reward?uid={{uid}}&icbal_id={{activity.id}}&register_bonus={{user_msg.register_bonus}}&complete_bonus={{user_msg.complete_bonus}}">
+			<image class="record-img" src="../../img/chakan.png"></image>
+			<view class="flexs">
+				<!-- 注册用户 -->
+				<view class="regis-size1">{{user_msg.user_num}}</view>
+				<!-- 完单用户 -->
+				<view class="regis-size2">{{user_msg.com_user_num}}</view>
+				<!-- 获得总金额 -->
+				<view class="regis-size3">{{user_msg.amount_earned}}</view>
+			</view>
+		</navigator>
+		<!--------------------------------- 额外奖励 ------------------------------------------------>
+		<view class="title3">
+			<image class="left" src="../../img/left.png"></image>
+			<view class="size2">额外奖励</view>
+			<image class="right" src="../../img/right.png"></image>
+		</view>
+		<view class="demo2">
+			<view class="small_demo2_down" wx:for="{{user_msg.extra_bonus_progress}}">
+				<wux-circle percent="{{item.percentage}}" size="50" strokeWidth="5" wux-class="huang" color="#FF7673"><text wx:if="{{item.jie ==0}}">未达成</text><text wx:else>达成</text></wux-circle>
+				<view class="demo2_s">
+					<view class="demo2_size">{{item.jiang}}元现金</view>
+					<view class="demo2_size2">邀请{{item.wan}}名完单好友即可获得</view>
+					<view class="demo2_size3" wx:if="{{item.still_bad !=0}}">您还差{{item.still_bad}}名好友</view>
+				</view>
+				<button wx:if="{{item.jie ==0}}" bindtap="fenxiang" class="cu-btn round line-red cu-button" style="color:#C88C14;width: 132rpx;height: 44rpx" role="button" aria-disabled="false">
+					去完成
+				</button>
+				<button wx:elif="{{item.jie ==1}}" data-index="{{index}}" bindtap="ReceiveAwards" class="cu-btn round line-red cu-button" style="color:#C88C14;width: 132rpx;height: 44rpx" role="button" aria-disabled="false">
+					领取现金
+				</button>
+				<button wx:else class="cu-btn round line-red cu-button" style="color:#8e8e8e;width: 132rpx;height: 44rpx" role="button" aria-disabled="false">
+					已完成
+				</button>
+			</view>
+		</view>
+		<view class="demo3" bindtap="showRule" data-target="Image">
+			<image class="img-mini" src="../../img/careful.png"></image>
+			<view class="demo3_size">活动规则</view>
+		</view>
+	</view>
+
+	<view class="cu-modal {{modalName=='Image'?'show':''}}" catchtouchmove="preventTouchMove">
+		<view class="cu-dialog">
+			<view class="boxs">
+				<image class="bg-img mask-imgs" src="{{url}}{{activity.rule_image}}">
+				</image>
+				<view class="cu-bar justify-end text-white">
+					<view class="action xx" bindtap="hideRule">
+						<text class="cuIcon-close xxl"></text>
+					</view>
+				</view>
+			</view>
+			<!-- <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view> -->
+		</view>
+	</view>
+
+
+	<!--------------------------------- 遮罩层 ------------------------------------------------>
+	<view class="cu-modal {{add_activity ?'show':''}}" catchtouchmove="preventTouchMove">
+		<view class="cu-dialog">
+			<image class="bg-img mask-img" src="{{url}}{{activity.pic_image}}">
+			</image>
+			<view class="cu-bar bg-white mask-up">
+				<view class="action margin-0 flex-sub  solid-left" bindtap="OpeningActivities">
+					立即开启
+				</view>
+			</view>
+		</view>
+	</view>
+	<authorize bind:onLoadFun='onLoadFun'></authorize>
+</view>

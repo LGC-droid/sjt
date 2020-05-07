@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-collapse": "../../../pages/dist/collapse/index",
+    "i-collapse-item": "../../../pages/dist/collapse-item/index"
+  }
+}

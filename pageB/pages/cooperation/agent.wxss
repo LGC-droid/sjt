@@ -1,0 +1,77 @@
+/* pageB/pages/cooperation/entry.wxss */
+.head {
+  display: flex;
+  align-items: center;
+  margin-top: 44rpx;
+  margin-bottom: 22rpx;
+}
+
+.label {
+  width: 12rpx;
+  height: 40rpx;
+  margin-left: 36rpx;
+}
+
+.information {
+  color: #E83422;
+  font-size: 32rpx;
+  margin-left: 14rpx;
+}
+
+
+.demo {
+  position: relative;
+  display: flex;
+  height: 88rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  align-items: center;
+}
+
+.mi {
+  width: 10rpx;
+  height: 10rpx;
+  margin-left: 36rpx;
+
+}
+
+.name {
+  margin-left: 14rpx;
+  font-size: 28rpx;
+  color: #000000;
+
+}
+
+.inp {
+  position: absolute;
+  left: 270rpx;
+  color: #888888;
+  font-size: 24rpx;
+
+}
+
+
+.choice {
+  position: absolute;
+  right: 30rpx;
+  width: 10rpx;
+  height: 20rpx;
+}
+.picker{
+  position: absolute;
+  font-size: 24rpx;
+  color: #888888;
+  left: 270rpx;
+  top: 26rpx;
+}
+.sub{
+  background: #E83422;
+  width: 320rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 90rpx;
+  margin-left: 215rpx;
+  margin-top: 140rpx;
+}

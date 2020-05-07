@@ -1,0 +1,30 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='searchGood'>
+  <view class='search acea-row row-between-wrapper'>
+    <view class='input acea-row row-between-wrapper'>
+      <text class='iconfont icon-sousuo2'></text>
+      <input type='text' value='{{searchValue}}' focus="{{focus}}" placeholder='点击搜索商家' placeholder-class='placeholder' bindinput="bindinput"></input>
+    </view>
+    <view class='bnt' bindtap='searchBut'>搜索</view>
+  </view>
+   <view>
+  <!-- <input class="textinput" bindinput="bindinput" value="{{searchValue}}" placeholder="请输入内容" /> -->
+</view>
+  <!-- <view class='title'>热门搜索</view>
+   <view class='list acea-row'>
+     <block wx:for="{{hotSearchList}}" wx:key>
+      <view class='item' bindtap='setHotSearchValue' data-item="{{item.title}}">{{item.title}}</view>
+     </block> 
+   </view>
+   <view class='line'></view>
+   <goodList bastList="{{bastList}}" wx:if="{{bastList.length > 0}}"></goodList> --> 
+  <scroll-view  class="item" hidden="{{hideScroll}}" >
+  <!-- style="{{arrayHeight>340?'height:340rpx':''}}" -->
+  <view wx:for="{{bindSource}}">
+    <view id="{{item}}" bindtap="itemtap" class="name iconfont icon-sousuo2">{{item}}</view>
+  </view>
+</scroll-view>
+</view>
+<!-- <view class='noCommodity'>
+   <view class='pictrue' wx:if="{{bastList.length == 0}}"><image src='/images/noSearch.png'></image></view> 
+</view> -->

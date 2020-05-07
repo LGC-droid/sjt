@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wux-circle": "../../../pages/dist/circle/index",    
+    "authorize": "/components/authorize/authorize"
+  }
+}

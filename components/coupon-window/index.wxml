@@ -1,0 +1,17 @@
+<view class='coupon-window {{window==true?"on":""}}'>
+   <view class='couponWinList'>
+      <view class='item acea-row row-between-wrapper' wx:for="{{couponList}}" wx:key>
+         <view class='money font-color'>￥<text class='num'>{{item.cashback_increases_value}}</text></view>
+         <view class='text'>
+            <view class='name'>{{item.name}}</view>
+             <view>{{item.msg}}</view>
+            <view>有效期至-{{item.end_time}}</view>
+         </view>
+      </view>
+   </view>
+   <view class='lid'>
+      <view bindtap='close' hover-class='none' class='bnt font-color'>立即使用</view>
+      <!-- <view class='iconfont icon-guanbi3' bindtap='close'></view> -->
+   </view>
+</view>
+<view class='mask' catchtouchmove="true" hidden='{{window==false}}'></view>

@@ -1,0 +1,7 @@
+<!--pageB/pages/wallet/shuoming.wxml-->
+<view class="size1">Q1.如何查看我的返现增值券？</view>
+<view class="size2">发放的优惠券可在“我的”-“红包”列表查看</view>
+<view class="size3">Q2.返现增值券的使用条件？</view>
+<view class="size4">（1）返现增值券全场通用（除霸王餐订单以外）</view>
+<view class="size4">（2）返现增值券在提交订单页面，点击“增值券”进行使用</view>
+<view class="size5">本场活动解释权在法律范围内归叮叮所有</view>

@@ -1,0 +1,107 @@
+<!-- <navbar parameter='{{parameter}}'></navbar> -->
+<wux-select id="wux-select1" />
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+<wux-toast id="wux-toast" />
+<view class=" {{scrollTop>0 ? 'topnavFixed' : 'flexd-h'}}">
+	<view class="size-h" bindtap="onClick1">{{title1}} ﹀</view>
+	<view class="size-z" bindtap="onClick2">{{title2}} ﹀</view>
+</view>
+<view class="promoter-list">
+	<!-- <view class='promoterHeader bg-color'>
+		<view class='headerCon acea-row row-between-wrapper'>
+			<view>
+				<view class='name'>推广人数</view>
+				<view><text class='num'>{{teamCount}}</text>人</view>
+			</view>
+			<view class='iconfont icon-tuandui'></view>
+		</view>
+	</view>
+	<view class='title acea-row row-column row-center' wx:if="{{differ_sum}}">
+		<view style="color:#666">还需{{differ_sum}}名下单的一级分销员,即可成为超级用户(享VIP返佣金)</view>
+	</view>
+	<view class='nav acea-row row-around'>
+		<view class="{{grade == 0 ? 'item on' : 'item'}}" bindtap='setType' data-grade='0'>一级({{total}})</view>
+		<view class="{{grade == 1 ? 'item on' : 'item'}}" bindtap='setType' data-grade='1'>二级({{totalLevel}})</view>
+	</view> -->
+	<view class='search acea-row row-between-wrapper'>
+		<view class='input'><input placeholder='点击搜索会员名称' placeholder-class='placeholder' value='{{keyword}}' bindblur='setKeyword'></input><text class='iconfont icon-guanbi'></text></view>
+		<view class='iconfont icon-sousuo2' bindtap='setRecordList'></view>
+	</view>
+	<!-- <view class='list'> -->
+	<!-- <view class="sortNav acea-row row-middle">
+            <view class="sortItem" data-sort="childCount ASC" bindtap='setSort' wx:if="{{sort == 'childCount DESC'}}">团队排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'childCount ASC'}}">团队排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="childCount DESC" bindtap='setSort' wx:else>团队排序
+              <image src='/images/sort2.png'></image>
+            </view>
+            <view class="sortItem" data-sort="numberCount ASC" bindtap='setSort' wx:if="{{sort == 'numberCount DESC'}}">金额排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'numberCount ASC'}}">金额排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="numberCount DESC" bindtap='setSort' wx:else>金额排序
+              <image src='/images/sort2.png'></image>
+            </view>
+            <view class="sortItem" data-sort="orderCount ASC" bindtap='setSort' wx:if="{{sort == 'orderCount DESC'}}">订单排序
+              <image src='/images/sort1.png'></image>
+            </view>
+            <view class="sortItem" data-sort="" bindtap='setSort' wx:elif="{{sort == 'orderCount ASC'}}">订单排序
+              <image src='/images/sort3.png'></image>
+            </view>
+            <view class="sortItem" data-sort="orderCount DESC" bindtap='setSort' wx:else>订单排序
+              <image src='/images/sort2.png'></image>
+            </view>
+        </view> -->
+	<!-- <block wx:for="{{recordList}}" wx:key>
+			<view class='item acea-row row-between-wrapper'>
+				<view class="picTxt acea-row row-between-wrapper">
+					<view class='pictrue'>
+						<image src='{{item.avatar}}'></image>
+					</view>
+					<view class='text'>
+						<view class='name line1'>{{item.nickname}}</view>
+						<view>加入时间: {{item.createtime}}</view>
+					</view>
+				</view>
+				<view class="right">
+					<view>已累计为我返 <text class='font-color'>{{item.childCount ? item.childCount : 0}}</text> 元</view>
+				</view>
+			</view>
+		</block>
+	</view> -->
+</view>
+<view wx:for="{{lists}}">
+	<view class="demo">
+		<view class="up-box">
+			<view class="mini-demo">
+				<text class="time">加入时间： </text><text class="times"> {{item.create_time}}</text>
+			</view>
+			<view class="mini-demo2">
+				<text wx:if="{{item.is_xin==1}}">未激活</text><text wx:else>已激活</text>
+			</view>
+			<image class="class-a" src="{{item.parent_id ==uid?'../../img/classA.png':'../../img/classB.png'}}"></image>
+		</view>
+		<view class="lower-box">
+			<image class="head-img" src="{{item.avatar}}"></image>
+			<view class="lower-size">
+				<view class="txt1">{{item.nickname}}</view>
+				<view class="sss2">
+					<text class="txt2">累计返现订单 </text>
+					<text class="txt3" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{item.order_count}}单</text>
+				</view>
+			</view>
+			<view class="low-s">
+				<text class="txt4">为我提供收益：</text>
+				<text class="txt5">￥{{item.childCount||0.00}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<authorize bind:onLoadFun='onLoadFun'></authorize>

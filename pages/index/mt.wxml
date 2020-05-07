@@ -1,0 +1,304 @@
+<navbar parameter='{{parameter}}'></navbar>
+<popuppictureandsave showRule="{{showRule}}"></popuppictureandsave>
+<import src="../../components/sort_list.wxml" />
+<!--index.wxml-->
+<!-- <view class="all"> -->
+<view class="head" wx:if="{{is_show_search}}">
+	<!--标题-->
+</view>
+<!-- <scroll-view scroll-y="true" style="height: 1000rpx; width: 750rpx;" bindscroll="show_search" enable-back-to-top="true"> -->
+
+<!--头-->
+<view class="head">
+	<!-- 地图定位 -->
+	<view class="dingweiquyu">
+		<image class="dingweitupian" src="/imgs/location2.png" />
+		<text class="dingweiwenzi" bindtap="navigateToSearch">{{address}}</text>
+	</view>
+	<!--搜索-->
+	<view class="search" bindtap="toSearchPage">
+		<view class="material-icons search-img">
+			<i-icon size="24" type="search" />
+			<text class="search-text">搜索商家</text>
+		</view>
+	</view>
+
+	<!--搜索关键词-->
+	<view class="search-key">
+	</view>
+</view>
+
+<!-- ··········································轮播········································ -->
+<swiper class="banner index-bg" circular="true" indicator-dots="true" autoplay="true" interval="3000" duration="500" wx:if="{{is_banners}}" indicator-color="rgba(255,255,255,0.6)" indicator-active-color="#fff">
+	<block wx:for="{{banners}}" wx:key="id">
+		<swiper-item>
+			<image bindtap="tapBanner" data-target="Image" data-type="{{item.type}}" class="slide-image" data-link="{{item.link}}" data-id="{{index}}" src="{{item.image}}" class="lunbotu" />
+		</swiper-item>
+	</block>
+</swiper>
+<view class="search-key">
+</view>
+<!--滑块视图-->
+
+<swiper indicator-dots="{{false}}" indicator-color="#D8D8D8" indicator-active-color="#B4B4B4" class="swiper">
+	<swiper-item>
+		<view class='nav acea-row'>
+			<block wx:for="{{menus}}" wx:key>
+				<view data-cate_name="{{item.cate_name}}" data-id="{{item.id}}" wx:key="id" bindtap="cate_list" class='item' url='{{item.url}}' hover-class='none'>
+					<view class='pictrue'>
+						<image src='{{item.mt_pic_image}}' class="slider-img"></image>
+					</view>
+					<view class="silder-name">{{item.cate_name}}</view>
+				</view>
+			</block>
+		</view>
+	</swiper-item>
+</swiper>
+<!-- ·······································活动专区······································ -->
+<view wx:if="{{is_merchant_entrance_banner || is_money_banner}}">
+	<view class="activity-size">活动专区</view>
+	<view class="activity-dis" wx:if="{{is_merchant_entrance_banner}}">
+		<navigator url="../../pageB/pages/chain/mt?chain_id={{item.chain_id}}&title={{item.title}}" wx:for="{{merchant_entrance_banner}}"  class="activity-pos">
+			<image class="activity-imgs" src="{{item.image}}"></image>
+			<button class="activity-button">
+				<view class="activity-button-size">{{item.title}}</view>
+				<view class="activity-button-size2">点击查看></view>
+			</button>
+		</navigator>
+		<!-- <view bindtap="hongbao" class="activity-pos" wx:if="{{is_money_banner}}">
+			<image class="activity-imgs2" src="{{money_banner.image}}"></image>
+			<button class="activity-button2">
+				<view class="activity-button-size">{{money_banner.title}}</view>
+				<view class="activity-button-size2">领红包再下单></view>
+			</button>
+		</view> -->
+	</view>
+</view>
+	<image bindtap="hongbao" wx:if="{{is_money_banner}}" class="redbao" src="../../imgs/redbao.png"></image>
+<!-- ·····································叮叮折扣文字·············································· -->
+<!-- <view wx:if="{{is_recommend_merchant}}">
+	<view class="dingdingzhekou">
+		<view class="dingbu">
+			<view class="zhekou">超大返现</view>
+			<view class="zhekoudengni">折扣等你领</view>
+			<view class="gengduo" bindtap="gengduo">更多></view>
+		</view>
+
+	</view> -->
+
+<!-- ······································中间部分················································· -->
+<!-- <scroll-view class="scroll-view_H" scroll-x="true">
+		<navigator class="scroll-view-item_H" wx:for="{{recommend_merchant}}" wx:key="{{item}}" url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}">
+			<image src="{{item.mt_logo_image}}" class="scroll-image" />
+			<view class="content">
+				<view class="title">
+					<text>{{item.elm_mname}}</text>
+					<text class="fxje">返现{{item.commission}}</text>
+				</view>
+
+			</view>
+		</navigator>
+	</scroll-view>
+</view> -->
+<!-- --------------------------------------------------霸王餐----------------------------------------------------------- -->
+<view class="overlord-title" wx:if="{{recommend_merchant.length}}">
+	<view class="overloard-titles">霸王餐来啦</view>
+	<view class="overlord-more" bindtap="more">查看更多></view>
+</view>
+<scroll-view class="scroll-view_O" scroll-x="true" wx:if="{{recommend_merchant.length}}">
+	<navigator class="overlord-demo" wx:for="{{recommend_merchant}}" wx:key="{{item}}" url="../../pageB/pages/overlord/overlord_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}&distance={{item.distance}}">
+		<image class="overlord-img" src="{{item.mt_logo_image}}"></image>
+		<view class="over-demo">
+			<view class="over-demo-title">{{item.mt_mname}}</view>
+			<button class="over-demo-btn">1元订购霸王餐</button>
+			<view wx:if="{{item.is_business_hours==1}}" >
+			<view class="over-demo-view">返￥{{item.commission}}</view>
+			</view>
+			<view wx:else>
+			<view class="over-demo-view2">休息中</view>
+			</view>
+		</view>
+	</navigator>
+
+</scroll-view>
+<!--·······································最下方店铺·················································-->
+<view class="{{scrollTop>tab_bar_size ? 'topnavFixed' : ''}}">
+	<i-tabs color="rgb(255,209,97)" current="{{ current }}" bindchange="handleChange">
+		<i-tab key="0" title="综合排序"></i-tab>
+		<i-tab key="1" title="距离最近"></i-tab>
+		<i-tab key="2" title="佣金最高"></i-tab>
+	</i-tabs>
+</view>
+<view wx:if="{{tab1}}" class='tab1'>
+	<swiper-item style="overflow:visible ">
+		<view id="poilist" class="list" bindtap="dianmian" wx:if="{{is_merchant}}">
+			<navigator url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{merchant}}">
+				<view class="field">
+					<view class="res-pos">
+						<image class="shop-img mt_border_logo" mode="aspectFit" src="{{item.mt_logo_image}}"></image>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image src="../../imgs/rest.png" class="rests"></image>
+						</view>
+					</view>
+					<view class="content {{item.mt_manjian ? '': 'isNotContent'}}">
+						<view class="shop-name">
+							<view class="shop-na">{{item.mt_mname}}</view>
+							<!-- <view class="rest">本店已休息</view> -->
+							<view class="shop-right">{{item.distance}}</view>
+						</view>
+						<view class="shop-mid-line " wx:if="{{item.mt_manjian}}">
+							<image src="/imgs/jian.png" class="jian"></image>
+							<text class="shop-sold" decode="{{true}}">{{item.mt_manjian}}</text>
+						</view>
+						<view class="exp">
+						</view>
+						<view class="jindutiao">
+							<text class="jindu">已抢{{item.percentage}}%</text>
+							<wux-progress stroke-width="8" wux-class="progress" activeColor="#E83422" backgroundColor="#F5C2BD" status="progress" percent="{{item.percentage}}" />
+							<!-- <view class="weui-progress">
+								<view class="weui-progress__bar">
+									<progress color="#FFD161" percent="{{item.percentage}}" stroke-width="3" style=" width: 380rpx;" />
+								</view>
+							</view> -->
+						</view>
+						<view class="exp">
+							<view class=" lbyj3">返现金额￥{{item.commission}}</view>
+							 <view class="vipshop" wx:if="{{item.is_member_cashback_increases}}">会员红包</view>
+              <view class="vipshops" wx:if="{{item.is_dingding_cashback_increases}}">叮叮联盟</view>
+						</view>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image class="haubu" src="../../imgs/huabu.png"></image>
+						</view>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="field-load" wx:if="{{!is_merchant}}">
+			<view class="field-load-loading">暂无商家列表~</view>
+		</view>
+		<view class="field-load" wx:if="{{is_jiazai}}">
+			<view class="field-load-loading">{{is_jiazai_val}}</view>
+		</view>
+	</swiper-item>
+
+</view>
+<view wx:if="{{tab2}}" class='tab1'>
+	<swiper-item style="overflow:visible ">
+		<view id="poilist" class="list" bindtap="dianmian" wx:if="{{is_merchant}}">
+			<navigator url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{merchant}}">
+				<view class="field">
+					<view class="res-pos">
+						<image class="shop-img mt_border_logo" mode="aspectFit" src="{{item.mt_logo_image}}"></image>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image src="../../imgs/rest.png" class="rests"></image>
+						</view>
+					</view>
+					<view class="content {{item.mt_manjian ? '': 'isNotContent'}}">
+						<view class="shop-name">
+							<view class="shop-na">{{item.mt_mname}}</view>
+							<!-- <view class="rest">本店已休息</view> -->
+							<view class="shop-right">{{item.distance}}</view>
+						</view>
+						<view class="shop-mid-line " wx:if="{{item.mt_manjian}}">
+							<image src="/imgs/jian.png" class="jian"></image>
+							<text class="shop-sold" decode="{{true}}">{{item.mt_manjian}}</text>
+						</view>
+						<view class="exp">
+						</view>
+						<view class="jindutiao">
+							<text class="jindu">已抢{{item.percentage}}%</text>
+							<!-- 我是进度条 -->
+							<wux-progress stroke-width="8" wux-class="progress" activeColor="#E83422" backgroundColor="#F5C2BD" status="progress" percent="{{item.percentage}}" />
+							<!-- <view class="weui-progress">
+								<view class="weui-progress__bar">
+									<progress color="rgb(255,209,97)" percent="{{item.percentage}}" stroke-width="3" style=" width: 380rpx;" />
+								</view>
+							</view> -->
+						</view>
+						<view class="exp">
+							<view class=" lbyj3">返现金额￥{{item.commission}}</view>
+							 <view class="vipshop" wx:if="{{item.is_member_cashback_increases}}">会员红包</view>
+              <view class="vipshops" wx:if="{{item.is_dingding_cashback_increases}}">叮叮联盟</view>
+						</view>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image class="haubu" src="../../imgs/huabu.png"></image>
+						</view>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="field-load" wx:if="{{!is_merchant}}">
+			<view class="field-load-loading">暂无商家列表~</view>
+		</view>
+		<view class="field-load" wx:if="{{is_jiazai}}">
+			<view class="field-load-loading">{{is_jiazai_val}}</view>
+		</view>
+	</swiper-item>
+</view>
+<view wx:if="{{tab3}}" class='tab1'>
+	<swiper-item style="overflow:visible ">
+		<view id="poilist" class="list" bindtap="dianmian" wx:if="{{is_merchant}}">
+			<navigator url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{merchant}}">
+				<view class="field">
+					<view class="res-pos">
+						<image class="shop-img mt_border_logo" mode="aspectFit" src="{{item.mt_logo_image}}"></image>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image src="../../imgs/rest.png" class="rests"></image>
+						</view>
+					</view>
+					<view class="content {{item.mt_manjian ? '': 'isNotContent'}}">
+						<view class="shop-name">
+							<view class="shop-na">{{item.mt_mname}}</view>
+							<!-- <view class="rest">本店已休息</view> -->
+							<view class="shop-right">{{item.distance}}</view>
+						</view>
+						<view class="shop-mid-line " wx:if="{{item.mt_manjian}}">
+							<image src="/imgs/jian.png" class="jian"></image>
+							<text class="shop-sold" decode="{{true}}">{{item.mt_manjian}}</text>
+						</view>
+						<view class="exp">
+						</view>
+						<view class="jindutiao">
+							<text class="jindu">已抢{{item.percentage}}%</text>
+							<wux-progress stroke-width="8" wux-class="progress" activeColor="#E83422" backgroundColor="#F5C2BD" status="progress" percent="{{item.percentage}}" />
+							<!-- <view class="weui-progress">
+								<view class="weui-progress__bar">
+									<progress color="rgb(255,209,97)" percent="{{item.percentage}}" stroke-width="3" style=" width: 380rpx;" />
+								</view>
+							</view> -->
+						</view>
+						<view class="exp">
+							<view class=" lbyj3">返现金额￥{{item.commission}}</view>
+							 <view class="vipshop" wx:if="{{item.is_member_cashback_increases}}">会员红包</view>
+              <view class="vipshops" wx:if="{{item.is_dingding_cashback_increases}}">叮叮联盟</view>
+						</view>
+						<view wx:if="{{item.is_business_hours==0}}">
+						<image class="haubu" src="../../imgs/huabu.png"></image>
+						</view>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="field-load" wx:if="{{!is_merchant}}">
+			<view class="field-load-loading">暂无商家列表~</view>
+		</view>
+		<view class="field-load" wx:if="{{is_jiazai}}">
+			<view class="field-load-loading">{{is_jiazai_val}}</view>
+		</view>
+	</swiper-item>
+</view>
+<!-- -------------------------------------获取定位--------------------------------------- -->
+<cover-view class="common-func-mo {{openSetting?'show':''}}" wx:if="{{openSetting}}">
+	<cover-view class="getUserInfo">
+		<cover-view class="text_blod">
+			获取不到您的定位
+		</cover-view>
+		<cover-view class="getUseradd">
+			允许"叮叮联盟饭粒网"使用您的定位，以获取您准确的位置
+		</cover-view>
+		<button bindopensetting="callback" class="mos_button" openType="openSetting">开启定位</button>
+		<!-- <cover-view class="liucha-banBen" wx:else>请升级微信版本</cover-view> -->
+	</cover-view>
+</cover-view>
+
+<authorize bind:onLoadFun='onLoadFun'></authorize>

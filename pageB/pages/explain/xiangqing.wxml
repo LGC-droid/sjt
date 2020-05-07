@@ -1,0 +1,10 @@
+<!--pages/explain/xiangqing.wxml-->
+<!-- <view class="heads">{{shuoming.title}}</view> 
+<view class="layout">
+  <view class="writer">木子草</view>
+  <view class="press">清华大学出版社</view>
+  <view class="times">刚刚</view>
+</view> -->
+<template is="wxParse" data="{{wxParseData:content.nodes}}" />
+<!-- html转wxml -->
+<import src="/wxParse/wxParse.wxml" /> 

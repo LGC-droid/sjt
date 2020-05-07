@@ -1,0 +1,17 @@
+<!-- 点击显示图片 --> 
+<view class="cu-modal  {{showRule.modalName=='Images'?'show':''}}" catchtouchmove="preventTouchMove">
+	<view class="cu-dialogs">
+		<view class="boxs">
+			<image class="bg-img mask-img" src="{{showRule.imgUrl}}">
+			</image>
+		</view>
+		<view class="">
+			<view class="action xx" bindtap="hideRule">
+				<text class="cuIcon-close xxl"></text>
+			</view>
+		</view>
+		<view class="cu-bar bg-white" bindtap='savePosterPath'>
+			<view class="action margin-0 flex-sub  solid-left baocun" >保存图片</view>
+		</view>
+	</view>
+</view>

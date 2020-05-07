@@ -1,0 +1,36 @@
+<!--pages/index/estimate.wxml-->
+<wux-calendar id="wux-calendar" />
+<view class="containers">
+	<ec-canvas id="mychart" canvas-id="init" ec="{{ ec }}"></ec-canvas>
+</view>
+<view class="dis-button" >
+	<button class=" {{xingqi==1?'hongse':'baise'}}"  bindtap="week">近7天</button>
+	<button class="{{yue==1?'hongse1':'baise1'}}" bindtap="month">近30天</button>
+	<button class="{{zidingyi==1?'hongse2':'baise2'}}" bindtap="click">自定义</button>
+	<view class="ddd" hidden="{{hiddenName}}">
+		<view class="day">
+			<view bindtap="openCalendar1" class="time-size">{{starttime}}</view>
+			<view class="zhi">至</view>
+			<view bindtap="openCalendar2" class="time-size">{{endtime}}</view>
+		</view>
+	</view>
+</view>
+<view class="bodys">
+	<view class="times">日期</view>
+	<view class="order">总订单数</view>
+	<view class="income">总收益</view>
+</view>
+<view class="demos">
+	<view class="times2">总数</view>
+	<view class="order1">{{data_display.order_total}}</view>
+	<view class="income1">{{data_display.total_revenue}}</view>
+</view>
+<view wx:for="{{orderlist}}">
+	<view class="{{item.single_and_double=='single'?'demo':'demo1'}}">
+		<view class="times1">{{item.comment_date}}</view>
+		<view class="order1">{{item.nums}}</view>
+		<view class="income1">{{item.sum}}</view>
+	</view>
+</view>
+
+<authorize bind:onLoadFun='onLoadFun'></authorize>

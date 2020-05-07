@@ -1,0 +1,8 @@
+/* pageB/pages/explain/help.wxss */
+.titles{
+  font-weight: bold;
+}
+.careful{
+  color: #e83422;
+  font-weight: bold;
+}

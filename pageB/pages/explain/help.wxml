@@ -1,0 +1,61 @@
+<!--pageB/pages/explain/help.wxml-->
+<view class="caption-wrap">
+
+	<i-collapse name="{{name}}">
+		<i-collapse-item title="Q1.怎么获得外卖返利" i-class='titles' name="name1">
+			<view style="font-size:28rpx;font-weight:normal" slot="content" >
+				答：打开叮叮饭粒，选择心仪外卖门店领取任务，并跳转到饿了么/美团平台下单（或者直接在对应平台上该门店进行下单）
+				订单完成后进行五星文字评价，按照返现要求提供对应的订单编号及相关截图即可
+				<view class="careful">注意：返现订单仅限48小时内订单。</view>
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q2.每一天可以领取多少任务" i-class='titles' name="name2">
+			<view style="font-size:28rpx;font-weight:normal" slot="content" i-class-content="green-text">
+				答：不限制每天任务领取数量，但限制已领取未提交任务数2个，在领取第三个任务时，如果前2个任务都未提交，需手动作废第一个，超过24个小时未完成任务，任务将自动作废
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q3.返利金额和下单金额有关么" i-class='titles' name="name3">
+			<view style="font-size:28rpx;font-weight:normal;" slot="content">
+				答：返利金额和在饿了么/美团下单金额无关，在叮叮饭粒上体现的返现金额是按照每单固定金额返利
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q4.美团红包饿了么红包能正常使用么" i-class='titles' name="name4">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：所有用户通过叮叮饭粒到外卖平台下单，原先饿了么/美团的红包，折扣券，店铺优惠券等所有优惠皆可同享，叮叮饭粒返利是额外奖励
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q5.提交完订单多久会完成审核" i-class='titles' name="name5">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：提交完订单会在24小时内完成审核，非工作日36小时内完成审核，返现金额在直接增加在余额
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q6.为什么任务会驳回" i-class='titles' name="name6">
+			<text style="font-size:28rpx;font-weight:normal;line-height:1" slot="content" i-class-content="green-text">
+				以下情况会发生任务驳回\n
+				饿了么：①未评价订单②匿名评价订单③订单编号错误\n
+				美团：①订单编号错误②订单截图错误③评价截图错误④非返现平台订单\n
+				具体驳回原因请查：叮叮饭粒-订单界面
+			</text>
+		</i-collapse-item>
+		<i-collapse-item title="Q7.订单驳回了多长时间内还能提交" i-class='titles' name="name7">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：订单被驳回将收到驳回服务通知，请于驳回24小时内更正凭证信息，再提交审核，否则将自动失效
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q8.驳回订单可以重复提交多少次" i-class='titles' name="name8">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：订单驳回3次，该返现任务将自动作废
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q9：失败的订单哪里能查看" i-class='titles' name="name9">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：可以在我的-已失败订单中查询
+			</view>
+		</i-collapse-item>
+		<i-collapse-item title="Q10.关于提现返利多久能到账" i-class='titles' name="name10">
+			<view style="font-size:28rpx;font-weight:normal" slot="content">
+				答：24小时内（非工作日48小时内)
+			</view>
+		</i-collapse-item>
+	</i-collapse>
+</view>

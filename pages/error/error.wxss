@@ -1,0 +1,6 @@
+/* pages/error/error.wxss */
+.error_text{
+  text-align: center;
+  margin-top: 150rpx;
+ height: 150rpx;
+}

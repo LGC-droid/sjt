@@ -1,0 +1,188 @@
+<!--pages/index/grade.wxml-->
+<view class="head">
+	<view class="head-size">分销提升秘籍</view>
+
+
+	<view class="head-huangs">
+		<wux-circle percent="{{dabiao_info.level_order_number_progress}}" color="#E82B19" size="60" strokeWidth="5" wux-class="huang">
+			<text wx:if="{{dabiao_info.is_level_order_number==0}}">未完成</text>
+			<text wx:else>完成</text>
+		</wux-circle>
+		<view class="sizes" bindtap="fxdds">
+			<view class="haung-size">返现订单数 <image class="wenhao" src="../../img/wenhao2.png"></image>
+			</view>
+			<view class="haung-size2">30天内完成6单以上返现订单</view>
+		</view>
+		<button wx:if="{{dabiao_info.is_level_order_number==0}}" class="cu-btn round line-red head-but" role="button" aria-disabled="false" bindtap="goindex">未完成</button>
+		<button wx:else class="cu-btn round line-red head-buts" role="button" aria-disabled="false">已完成</button>
+	</view>
+
+
+
+	<view class="head-huang">
+		<wux-circle percent="{{dabiao_info.level_invitation_number_progress}}" color="#E82B19" size="60" strokeWidth="5" wux-class="huang">
+			<text wx:if="{{dabiao_info.is_level_invitation_number==0}}">未完成</text>
+			<text wx:else>完成</text>
+		</wux-circle>
+		<view class="sizes" bindtap="yqhy">
+			<view class="haung-size">邀请好友 <image class="wenhao" src="../../img/wenhao2.png"></image>
+			</view>
+			<view class="haung-size2">30天内成功邀请一个好友</view>
+		</view>
+		<button wx:if="{{dabiao_info.is_level_invitation_number==0}}" class="cu-btn round line-red head-but" role="button" aria-disabled="false" bindtap="yaoqing">去完成</button>
+		<button wx:else class="cu-btn round line-red head-buts" role="button" aria-disabled="false">已完成</button>
+	</view>
+
+
+	<view class="head-huang">
+		<wux-circle percent="{{dabiao_info.level_dis_order_number_progress}}" color="#E82B19" size="60" strokeWidth="5" wux-class="huang">
+			<text wx:if="{{dabiao_info.is_level_dis_order_number==0}}">未完成</text>
+			<text wx:else>完成</text>
+		</wux-circle>
+		<view class="sizes" bindtap="fenxiao">
+			<view class="haung-size">分销订单数 <image class="wenhao" src="../../img/wenhao2.png"></image>
+			</view>
+			<view class="haung-size2">30天内已经订单数达到30单</view>
+		</view>
+		<button wx:if="{{dabiao_info.is_level_dis_order_number==0}}" class="cu-btn round line-red head-but" role="button" aria-disabled="false">未完成</button>
+		<button wx:else class="cu-btn round line-red head-buts" role="button" aria-disabled="false">已完成</button>
+	</view>
+
+
+	<view class="head-huang">
+		<wux-circle percent="{{dabiao_info.level_member_progress}}" color="#E82B19" size="60" strokeWidth="5" wux-class="huang">
+			<text wx:if="{{dabiao_info.is_level_member==0}}">未完成</text>
+			<text wx:else>完成</text>
+		</wux-circle>
+		<view class="sizes" bindtap="ddhy">
+			<view class="haung-size">订单会员 <image class="wenhao" src="../../img/wenhao2.png"></image>
+			</view>
+			<view class="haung-size2">成为叮叮会员</view>
+		</view>
+		<button wx:if="{{dabiao_info.is_level_member==0}}" class="cu-btn round line-red head-but" role="button" aria-disabled="false" bindtap="govip">去完成</button>
+		<button wx:else class="cu-btn round line-red head-buts" role="button" aria-disabled="false">已完成</button>
+	</view>
+</view>
+<!-- ··························合伙人等级与特权········································ -->
+<view class="neck">
+	合伙人等级与特权
+</view>
+<view class="bodys">
+	<view class="bodys-size1">等级</view>
+	<view class="bodys-size2">特权</view>
+</view>
+<view class="bodys2">
+	<view class="one">
+		<view class="one-size1">一星</view>
+		<view class="one-size2">
+			<image class="xhd" src="../../img/xhd.png" />
+			<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员可获每个订单{{distribution_proportion.one_pro_one_level}}%</text>
+		</view>
+	</view>
+	<view class="two">
+		<view class="one-size1">二星</view>
+		<view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员可获每个订单{{distribution_proportion.two_pro_one_level}}%</text>
+			</view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;间接会员可获每个订单{{distribution_proportion.two_pro_two_level}}%</text>
+			</view>
+		</view>
+	</view>
+	<view class="two">
+		<view class="one-size1">三星</view>
+		<view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员可获每个订单{{distribution_proportion.three_pro_one_level}}%</text>
+			</view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;间接会员可获每个订单{{distribution_proportion.three_pro_two_level}}%</text>
+			</view>
+		</view>
+	</view>
+	<view class="two">
+		<view class="one-size1">四星</view>
+		<view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员可获每个订单{{distribution_proportion.four_pro_one_level}}%</text>
+			</view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;间接会员可获每个订单{{distribution_proportion.four_pro_two_level}}%</text>
+			</view>
+		</view>
+	</view>
+	<view class="two">
+		<view class="one-size1">五星</view>
+		<view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员可获每个订单{{distribution_proportion.five_pro_one_level}}%</text>
+			</view>
+			<view class="one-size2">
+				<image class="xhd" src="../../img/xhd.png" />
+				<text class="text" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;间接会员可获每个订单{{distribution_proportion.five_pro_two_level}}%</text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 合伙人等级升降级规则 -->
+<view class="foot">
+	合伙人等级升降级规则
+</view>
+<view class="foots">
+	<view class="foots-demo">
+		<view class="txt">
+			<view class="ccccc">1)叮叮饭粒合伙人分为五种等级:</view>
+			<view>
+				<text decode="{{true}}" space="{{true}}" class="fsfsfsfs" >&nbsp;&nbsp;&nbsp;分别对应的是一星-二星-三星-四星-五星合伙人人</text>
+			</view>
+			<view>
+				<text decode="{{true}}" space="{{true}}" class="fsfsfsfs">&nbsp;&nbsp;&nbsp;不同的合伙人的佣金收入比例不一</text>
+			</view>
+			<view class="ccccc">2)各等级的准入基础要求为：</view>
+			<view>
+				<text decode="{{true}}" space="{{true}}" class="fsfsfsfs">&nbsp;&nbsp;&nbsp;开通叮叮饭粒合伙人,且不存在违规作弊行为。</text>
+			</view>
+		</view>
+	</view>
+	<view class="upgrade">
+		<view class="jinji">推广能力等级和收入标准</view>
+	</view>
+	<view class="foots-demo1">
+		<view class="txts">
+			1)升级条件
+		</view>
+		<view class="txtsss">
+			<text  decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;所有合伙人初始等级均为一星，30天内完成对应星级提升等级，将于次日更新数据，并获得星级提升合伙人等级升级
+		</text>
+		</view>
+	</view>
+	<view class="upgrade1">
+		<image class="aaa" src="../../img/A.png"></image>
+		<view class="jinji">晋级</view>
+	</view>
+	<view class="foots-demo2">
+		<view class="txts">
+			1)降级条件
+		</view>
+		<view class="txtss">
+			<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;近30天内未完成对应星级任务，根据未完成任务对应星级数下降等级，等级数据于次日更新，并扣除未完成任务对应星级，</text>
+		</view>
+		<view class="txtsss">
+			<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;存在作弊违规等非正规手段，直接降星到一星合伙人</text>
+		</view>
+
+	</view>
+	<view class="upgrade2">
+		<image class="aaa" src="../../img/B.png"></image>
+		<view class="jinji">降级</view>
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

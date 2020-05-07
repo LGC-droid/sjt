@@ -1,0 +1,185 @@
+/* pages/index/profit.wxss */
+page {
+  background: #F5F5F5;
+}
+
+.dis {
+  display: flex;
+}
+.topnavFixed {
+  background: white;
+  position: fixed;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  top: 0;
+  z-index: 199;
+}
+
+.size-h {
+  color: rgba(78, 78, 78, 1);
+  font-size: 24rpx;
+  /* padding-left: 150rpx; */
+  position: absolute;
+  left: 42%;
+}
+
+.flexd-h {
+  background: white;
+  display: flex;
+  height: 88rpx;
+  position: relative;
+
+  align-items: center;
+}
+
+.size-z {
+  color: rgba(78, 78, 78, 1);
+  font-size: 24rpx;
+  padding-left: 150rpx;
+  position: absolute;
+  left: 40%;
+}
+.time-size {
+  font-size: 24rpx;
+}
+
+.zhi {
+  margin-left: -8rpx;
+  font-size: 24rpx
+}
+
+.day {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-top: 2rpx solid #f5f5f5;
+  align-items: center;
+
+}
+.single {
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30rpx;
+  color: #8C8C8C;
+  font-size: 24rpx;
+}
+
+.demo {
+  width: 730rpx;
+  border-radius: 10rpx;
+  background: white;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0rpx 2rpx 12rpx 0rpx rgba(0, 0, 0, 0.18);
+}
+
+.time {
+  font-size: 20rpx;
+  color: #8C8C8C;
+}
+
+.times {
+  font-size: 20rpx;
+  color: #101010;
+}
+
+.proportion {
+  font-size: 20rpx;
+  color: #8C8C8C;
+}
+
+.proportions {
+  font-size: 20rpx;
+  color: #101010;
+}
+
+.mini-demo {
+  margin-left: 24rpx;
+  padding-top: 20rpx;
+}
+
+.mini-demo2 {
+  margin-left: 24rpx;
+  padding-bottom: 10rpx;
+}
+
+.up-box {
+  border-bottom: 2rpx solid #F5F5F5;
+  position: relative;
+}
+
+.class-a {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 631rpx;
+  top: -1rpx;
+}
+
+
+.lower-box {
+  height: 140rpx;
+  display: flex;
+  position: relative;
+}
+
+.head-img {
+  width: 80rpx;
+  height: 80rpx;
+  background: #F5F5F5;
+  text-align: center;
+  position: absolute;
+  left: 24rpx;
+  top: 28rpx;
+}
+
+.lower-size {
+  position: absolute;
+  left: 24rpx;
+  top: 24rpx;
+}
+
+.low-s {
+  position: absolute;
+  left: 515rpx;
+  top: 74rpx;
+}
+
+.sss2 {
+  margin-top: 15rpx;
+}
+
+.text1 {
+  font-size: 24rpx;
+  color: #8C8C8C;
+
+}
+
+.text2 {
+  font-size: 24rpx;
+  color: #101010;
+}
+
+.text3 {
+  font-size: 24rpx;
+  color: #e83422;
+}
+
+.text4 {
+  font-size: 22rpx;
+  color: 22rpx;
+}
+
+.text5 {
+  font-size: 22rpx;
+  color: #e83422;
+}
+
+.tex {
+  margin-top: 15rpx;
+}

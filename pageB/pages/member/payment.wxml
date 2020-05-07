@@ -1,0 +1,66 @@
+<!--pages/member/payment.wxml-->
+<view class="head">
+
+	<view class="head-img">
+		<open-data type="userAvatarUrl"></open-data>
+	</view>
+	<open-data type="userNickName" class="head-name"></open-data>
+	<view class="introduce">{{LastTime}}</view>
+</view>
+<view class="bodys">
+<!-- src="{{banner_data.image}}" -->
+	<image class="banner" wx:if="{{is_banner}}" src="../../img/hyzx2.jpg"></image>
+	<view class="box">
+		<view wx:for="{{MemberRechargeRules}}">
+			<view class="{{index==idx?'demo2':'demo'}}" bindtap='goIndex' data-index="{{index}}">
+				<view class="first">{{item.first}}</view>
+				<view class="month">{{item.name}}</view>
+				<view class="money">￥{{item.c_price}}</view>
+				<view class="{{index==idx?'bdy2':'bdy'}}">￥{{item.o_price}}</view>
+			</view>
+			<!-- <view class="{{index==idx?'demo2':'demo'}}" bindtap='goIndex' data-index="{{index}}">
+			<view class="first">限时折扣活动</view>
+			<view class="month">一个月</view>
+			<view class="money">￥15</view>
+			<view class="bdy">￥20</view>
+		</view>
+		<view class="{{index==idx?'demo2':'demo'}}" bindtap='goIndex' data-index="{{index}}">
+			<view class="first">单价每月最便宜</view>
+			<view class="month">一个月</view>
+			<view class="money">￥150</view>
+			<view class="bdy">￥20</view>
+		</view> -->
+		</view>
+	</view>
+
+</view>
+<view class="foot">
+	<view class="foot-size">会员城市范围</view>
+	<view class="foot-size1">
+		<text class="foot-s" decode="{{true}}" space="{{true}}">限福州市使用 &nbsp;&nbsp;</text>
+	</view>
+</view>
+<view class="agreement" bindtap="showRule" data-target="Image">会员规则 | 会员服务协议</view>
+<view class="bottom">
+	<view class="bot-size">总价</view>
+	<view class="bot-size1">￥{{SelectionMemberRechargeRules.c_price}}</view>
+	<view class="bot-size2">￥{{SelectionMemberRechargeRules.o_price}}</view>
+	<button class="bot-btn" bindtap="wx_play" lang="zh_CN">开通{{SelectionMemberRechargeRules.name}}会员</button>
+</view>
+<view class="cu-modal {{modalName=='Image'?'show':''}}" catchtouchmove="preventTouchMove">
+	<view class="cu-dialog">
+		<view class="boxs">
+			<image class="bg-img mask-imgs" src="../../img/ddvip.png">
+			</image>
+			<view class="cu-bar justify-end text-white">
+				<view class="action xx" bindtap="hideRule">
+					<text class="cuIcon-close xxl"></text>
+				</view>
+			</view>
+		</view>
+		<!-- <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub  solid-left" bindtap="hideModal">我知道了</view>
+    </view> -->
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

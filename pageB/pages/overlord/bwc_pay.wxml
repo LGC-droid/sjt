@@ -1,0 +1,11 @@
+ 
+
+	<wux-result
+    title="支付1元抢购"
+    label="请在1分钟内完成支付，否则任务名额将自动取消(剩余支付时间 {{ c4 }})"
+    buttons="{{ buttons }}"
+    extra="叮叮饭粒"
+    fixed
+  bind:click="wx_play" lang="zh_CN"
+/>
+	<authorize bind:onLoadFun='onLoadFun'></authorize>

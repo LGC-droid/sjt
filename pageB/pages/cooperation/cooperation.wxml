@@ -1,0 +1,20 @@
+<!--pageB/pages/cooperation/cooperation.wxml-->
+<image class="banner" src="../../img/hezuobanner.jpg"></image>
+<view class="demo" bindtap="settled">
+	<image class="demo-img" src="../../img/ruzhu.png"></image>
+	<view class="demo-size">商家入驻</view>
+	<view class="demo-size1">上百万餐饮商家已入驻</view>
+	<view class="btn">立即申请</view>
+</view>
+<view class="demo2" bindtap="daili">
+	<image class="demo-img" src="../../img/daili.png"></image>
+	<view class="demo-size">城市代理</view>
+	<view class="demo-size1">城市代理邀您共赢未来</view>
+	<view class="btn">立即申请</view>
+</view>
+<view class="demo3" bindtap="fuwu">
+	<image class="demo-img" src="../../img/fuwu.png"></image>
+	<view class="demo-size">软件服务</view>
+	<view class="demo-size1">让我们一起共创美好未来</view>
+	<view class="btn">立即申请</view>
+</view>

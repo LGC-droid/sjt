@@ -1,0 +1,143 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/mt",
+    "pages/user/user",
+    "pages/index/cs",
+    "pages/index/weixinlink",
+    "pages/error/error",
+    "pages/user_voucher/index",
+    "pages/user_voucher/shuoming",
+    "pages/cate_list/cate_list",
+    "pages/cate_list/recommend_merchant_lst"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#e93323",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "叮叮饭粒"
+  },
+  "subpackages": [
+    {
+      "root": "pageB",
+      "name": "pageB",
+      "pages": [
+        "pages/merchant/merchant_details",
+        "pages/merchant/task_lst",
+        "pages/merchant/merchant",
+        "pages/chain/index",
+        "pages/chain/mt",
+        "pages/user_order/index",
+        "pages/capital/index",
+        "pages/capital/tixian",
+        "pages/capital/yinhangka",
+        "pages/capital/recharge",
+        "pages/capital/order_record",
+        "pages/user_spread_user/index",
+        "pages/explain/explain",
+        "pages/explain/xiangqing",
+        "pages/explain/help",
+        "pages/user_spread_code/index",
+        "pages/user_spread_user/shuoming",
+        "pages/invite_cash_back_activities_list/index",
+        "pages/invite_cash_back_activities_list/reward",
+        "pages/user_spread_money/index",
+        "pages/user_spread_money/grade",
+        "pages/user_spread_money/profit",
+        "pages/user_spread_money/withdrawals",
+        "pages/promoter-list/index",
+        "pages/promoter-order/index",
+        "pages/goods_search/index",
+        "pages/goods_search/search_list",
+        "pages/member/member",
+        "pages/member/membership",
+        "pages/member/payment",
+        "pages/wallet/wallet",
+        "pages/wallet/shuoming",
+        "pages/overlord/overlord",
+        "pages/overlord/overlord_details",
+        "pages/overlord/bwc_pay",
+        "pages/cooperation/cooperation",
+        "pages/cooperation/service",
+        "pages/cooperation/agent"
+      ]
+    },
+    {
+      "root": "pageC",
+      "name": "pageC",
+      "pages": [
+        "pages/estimate/estimate",
+        "pages/commentary/commentary"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pageB"
+      ]
+    },
+    "pages/user/user": {
+      "network": "all",
+      "packages": [
+        "pageC"
+      ]
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx2c348cf579062e56",
+    "wxece3a9a4c82f58c9",
+    "wx47b3e7dcce02674f"
+  ],
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#282828",
+    "selectedColor": "#282828",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/tabBar/elm_h.png",
+        "selectedIconPath": "imgs/tabBar/elm_b.png",
+        "text": "饿了么"
+      },
+      {
+        "pagePath": "pages/index/mt",
+        "iconPath": "imgs/tabBar/mt1_h.png",
+        "selectedIconPath": "imgs/tabBar/mt1_Y.png",
+        "text": "美团"
+      },
+      {
+        "pagePath": "pages/user_voucher/index",
+        "iconPath": "imgs/tabBar/dd_h.png",
+        "selectedIconPath": "imgs/tabBar/dd_g.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "imgs/tabBar/wd_h.png",
+        "selectedIconPath": "imgs/tabBar/wd_r.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.2",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

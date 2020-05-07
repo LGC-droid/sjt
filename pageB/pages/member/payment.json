@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#322D2C",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "开通会员"
+}

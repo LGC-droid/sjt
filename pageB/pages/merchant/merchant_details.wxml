@@ -1,0 +1,272 @@
+<!--pages/details/details.wxml-->
+<!-- <navbar parameter='{{parameter}}'></navbar> -->
+<image class="head-img" src="{{merchants.pic_image}}"></image>
+<view>
+	<image class="head {{takeaway_platform==1 ? 'mt_border_logo': 'elm_border_logo'}}" src="{{merchants.logo_image}}"></image>
+</view>
+<view class="flexd">
+	<view class="txt">{{merchants.mname}}</view>
+</view>
+<view class="flexd" wx:if="{{merchants.manjian !=''}}">
+	<image src="/imgs/jian.png" class="jian"></image>
+	<text class="shop-sold" decode="{{true}}">{{merchants.manjian}}</text>
+</view>
+<view class="times" wx:if="{{merchants.business_time}}"> 
+  <text class="times-name">营业时间:</text>
+	<view class="times-time" wx:for="{{merchants.business_time}}">{{item.start_time}}-{{item.end_time}}</view> 
+</view>
+<view class="flexd">
+	<view class="exp">
+		<view class=" lbyj3">返现金额￥{{task_details.commission ||0}}</view>
+		<view class="vipshop"  wx:if="{{merchants.is_member_cashback_increases}}">支持会员红包</view>
+		<view class="vipshops" wx:if="{{merchants.is_member_cashback_increases}}">支持叮叮联盟</view>
+		
+	</view>
+</view>
+<view class="flexd">
+	<view class="jindutiao">
+	<text class="surplus">剩余：{{task_details.same_day_surplus_task_sum||0}}</text>
+		<text class="jindu">已抢{{task_details.percentage}}%</text>
+		<!-- 我是进度条 -->
+		<view class="weui-progress">
+			<view class="weui-progress__bar">
+				<progress color="#ce3329" percent="{{task_details.percentage}}" stroke-width="5" style=" width: 280rpx;" />
+			</view>
+		</view>
+	</view>
+</view>
+<view class="neck" wx:if="{{is_banners}}">
+	<button class="nhl" id="first" plain="true">拿好礼</button>
+	<view class="neck-size">叮叮饭粒福利群 天天好礼送不停</view>
+	<button class="group" bindtap="showRule">进群</button>
+</view>
+<view class="bodys">
+	<view class="dwview">
+		<view class="dwview-demo">
+			<view class="tanxing">
+				<image src="{{get_user_head_res[0]}}" class="imgs2"></image>
+				<view wx:for="{{get_user_head_res}}">
+					<image wx:if="{{index !=0}}" src="{{item}}" class="imgs4"></image>
+				</view>
+
+			</view>
+			<button class="qiang" data-id="shareBtn" bindtap="yaoqing">邀请好友一起抢</button>
+		</view>
+		<i-row>
+			<i-col span="5" i-class="col-class">
+				<image src="../../img/warm-prompt.png" class="imgs3"></image>
+			</i-col>
+			<i-col span="13" i-class="col-class">
+				<view class="dd-group">叮叮饭粒福利群</view>
+				<view class="dd-kefu">添加客服微信，进叮叮福利群，领取叮叮专属每日粉丝福利礼品</view>
+			</i-col>
+			<i-col span="6" i-class="col-class">
+				<button class="tianjia" bindtap="tianjia">添加</button>
+				<i-modal title="联系客服" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+					<view class="tjwx">添加客服微信，为您提供24*7服务帮助，还可以加入叮叮饭粒外卖福利群，领取粉丝专属实物福利礼品</view>
+				</i-modal>
+
+			</i-col>
+		</i-row>
+
+	</view>
+	<view class="dwviews">
+		<i-row>
+			<i-col span="15" i-class="col-class">
+				<view class="ssfx">
+					<view wx:if="{{is_distribution}}">
+
+					</view>
+					<view wx:else>
+						申请成为分销员
+					</view>
+				</view>
+				<view class="succsess">成功邀请一个好友一月平均收益50元</view>
+				<view class="succsess">成功邀请一个好友一年平均收益600元</view>
+				<view class="succ-two">成功邀请十个好友一年平均收益6000元</view>
+			</i-col>
+			<i-col span="9" i-class="col-class">
+
+				<view wx:if="{{is_distribution}}">
+					<view class="buju">
+						<button data-id="shareBtn" open-type='share' class="yijian_zhuanfa" style="width:70rpx;height:70rpx;border:none;background-size:70rpx 70rpx;margin-left: 47rpx;margin-top: 48rpx;" plain="true"></button>					
+						<image class="yq" bindtap="gotimg" src="../../img/tupian.png"></image>
+					</view>
+
+				</view>
+				<view wx:else>
+
+					<button class="yijian" bindtap="shengqing">一建申请分销员</button>
+				</view>
+				<view class="invitation">邀请好友赚佣金</view>
+			</i-col>
+		</i-row>
+	</view>
+	<view class="Technological" bindtap="gohelp" data-state="shibai">
+		<view class="Technological-size1">返现流程</view>
+		<view class="Technological-size2">查看说明></view>
+	</view>
+	<image class="lct" src="../../img/lct.jpg"></image>
+	<view wx:if="{{task==0}}">
+		<image wx:if="{{takeaway_platform ==2}}" src="../../img/GroupCopy.png" bindtap="qiehuan" class="qiehuan"></image>
+		<image wx:else src="../../img/GroupCopy1.png" bindtap="qiehuan" class="qiehuan"></image>
+	</view>
+	<view else></view>
+	<!-- <view class="zysx">
+    <view class="zhu-img">
+      <image class="zhuyi" src="/imgs/004.png"></image>
+    </view>
+
+    
+    <view class="shixiang">
+      1、点击下方领取商户返现任务
+    </view>
+    <view class="shixiangx">
+      2、点击下方下单平台跳转下单
+    </view>
+    <view class="shixiangx">
+      3、收到餐品后，最迟凌晨6点前提交凭证
+    </view>
+    <view class="shixiangxs">
+      4、订单将于次日12点前完成审核
+    </view>
+  </view> -->
+</view>
+<view class="minis-demo">
+	<image class="minis-demo-img"  src="../../img/attention.jpg"></image>
+</view>
+
+<!-- 为您推荐开始 -->
+<view wx:if="{{is_recommend_merchant}}">
+	<view class="flexds">
+		<view>
+			为您推荐
+		</view>
+	</view>
+	<view class="txbj">
+
+		<navigator url="../merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{recommend_merchant}}" class="kuaiji">
+			<image class="nav-img" src="{{takeaway_platform ==1? item.mt_logo_image: item.elm_logo_image}}"></image>
+			<view class="wenzi">
+				{{takeaway_platform ==1? item.mt_mname: item.elm_mname}}
+			</view>
+			<view class="xuxian">
+				<view class="lbyj4">
+					返现金额￥{{item.commission}}
+				</view>
+				<view class="distance">距离:{{item.distance}}</view>
+			</view>
+		</navigator>
+	</view>
+</view> 
+<!-- 为您推荐结束 -->
+<view class='placeholder-view'></view>
+<view class="un-flexd">
+	<button class="button-box" data-id="shareBtn" role="button" openType="contact" sessionFrom="weapp">
+		<button class="kefu-img bu-img">
+		</button>
+		<view class="size">客服</view>
+	</button>
+	<view class="abc" wx:if="{{is_place_order ==0}}">
+		<button class="up-button-one" bindtap="linrenwu">领取任务</button>
+		<view bindtap="jumpDetails_elm" wx:if="{{takeaway_platform==2}}">
+			<button class="nobtnsubmit" formType="submit" openType="getUserInfo" class="up-button-two">饿了么下单</button>
+		</view>
+		<view bindtap="jumpDetails_mt" wx:if="{{takeaway_platform==1}}" data-id="{{data.renwu.id}}">
+			<button class="nobtnsubmit" formType="submit" openType="getUserInfo" class="up-button-two">美团下单</button>
+		</view>
+	</view>
+	<view wx:else class="abc">
+		<button class="up-button2-one" bindtap="linrenwu">领取任务</button>
+		<button class="up-button2-two" bindtap="up_pingzheng" data-id="{{data.renwu.id}}">上传凭证</button>
+		<view bindtap="jumpDetails_elm" wx:if="{{takeaway_platform==2}}">
+			<button class="nobtnsubmit" formType="submit" openType="getUserInfo" class="up-button2-three">饿了么下单</button>
+		</view>
+		<view bindtap="jumpDetails_mt" wx:if="{{takeaway_platform==1}}" data-id="{{data.renwu.id}}">
+			<button class="nobtnsubmit" formType="submit" openType="getUserInfo" class="up-button2-three">美团下单</button>
+		</view>
+	</view>
+</view>
+<!-- 旧版本领取任务 -->
+<!-- <view class="dbflexd">
+  <view class="tabbar-buy-now-ssss btn-lg" data-id="{{data.renwu.id}}">
+    <view class="weizhi">
+      <button data-id="shareBtn" role="button" open-type='share' class="yijian_zhuanfas tabbar-item-icon" style="width:60rpx;height:60rpx;border:none;background-size:60rpx 60rpx;margin-left: 62rpx;background-size:44rpx;background-repeat:no-repeat;margin-top: 10rpx;z-index: 3;"
+        plain="true"></button>
+      
+      <button style="font-size: 18rpx;margin-top: -15rpx;background: white" class="nobtn" data-id="shareBtn" open-type='share'>分享</button>
+    </view>
+
+  </view>
+  <view class="tabbar-buy-now-ssss btn-lg nobtn" openType="contact" sessionFrom="weapp">
+    <button data-id="shareBtn" role="button" openType="contact" sessionFrom="weapp" class="kefufx tabbar-item-icon" style="width:60rpx;height:60rpx;border:none;background-size:60rpx 60rpx;margin-left: 56rpx;background-size:44rpx;background-repeat:no-repeat;margin-top: 10rpx;z-index: 3;"
+      plain="true"></button>
+    
+    <button style="font-size: 18rpx;margin-top: -15rpx;background: white " class="nobtn" openType="contact" sessionFrom="weapp">客服</button>
+  </view>
+  <block wx:if="{{is_place_order ==0}}">
+    <view bindtap="linrenwu" class="tabbar-buy-now-zzzz btn-lq" data-id="{{data.renwu.id}}">
+      <button class="nobtnsubmit" formType="submit" openType="getUserInfo"></button>
+      <image class="tabbar-item-icon" mode="aspectFit" src="../../img/lq.png" style="width:44rpx;height: 44rpx;margin-top:10rpx"></image>
+      <view class="tabbar-item-text" style="font-size:18rpx;margin-top: -30rpx">
+        <view class="tabbar-item-text" style="font-size:18rpx">领取任务</view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    
+    <view bindtap="up_pingzheng" class="tabbar-buy-now-lqrw btn-lq" data-id="{{data.renwu.id}}">
+      <button class="nobtnsubmit" formType="submit" openType="getUserInfo"></button>
+      <image class="tabbar-item-icon" mode="aspectFit" src="../../img/lq.png" style="width: 44rpx;height: 44rpx; margin-top:10rpx"></image>
+      <view class="tabbar-item-text" style="font-size:18rpx;margin-top: -38rpx">
+        <view wx:if="{{rate_of_progress ==-1}}">审核失败，重新上传</view>
+        <view wx:elif="{{rate_of_progress ==1}}">正在审核中...</view>
+        <view wx:elif="{{rate_of_progress ==0  }}">完成，上传凭证</view>
+      </view>
+    </view>
+  </block>
+  <view bindtap="jumpDetails_elm" class="tabbar-buy-now-lqsh btn-lq" wx:if="{{takeaway_platform==2}}">
+    <button class="nobtnsubmit" formType="submit" openType="getUserInfo"></button>
+    <image class="tabbar-item-icon" mode="aspectFit" src="/imgs/xd.png" style="width: 44rpx;height: 44rpx;margin-top:10rpx"></image>
+    <view class="tabbar-item-text" style="font-size: 18rpx;margin-top: -36rpx">饿了么下单</view>
+  </view>
+  <view bindtap="jumpDetails_mt" wx:if="{{takeaway_platform==1}}" class="tabbar-buy-now-lqsh btn-lq" data-id="{{data.renwu.id}}">
+    <button class="nobtnsubmit" formType="submit" openType="getUserInfo"></button>
+    <image class="tabbar-item-icon" mode="aspectFit" src="/imgs/xd.png" style="width: 44rpx;height: 44rpx;margin-top:10rpx"></image>
+    <view class="tabbar-item-text" style="font-size: 18rpx;margin-top: -34rpx">美团下单</view>
+  </view>
+</view> -->
+
+
+
+
+<!-- 弹出进群二维码 -->
+<!-- <view class="cu-modal {{modalName=='Images'?'show':''}}" catchtouchmove="preventTouchMove">
+	<view class="cu-dialog">
+		<view class="boxs">
+			<image class="bg-img mask-img" src="../../../imgs/erweima.jpg">
+			</image>
+		</view>
+
+		<view class="cu-bar bg-white mask-up">
+			<view class="action margin-0 flex-sub  solid-left" bindtap="hideRule">
+				保存图片
+			</view>
+		</view>
+	</view>
+</view> -->
+ <popuppictureandsave showRule="{{showRule}}"></popuppictureandsave>
+<authorize bind:onLoadFun='onLoadFun'></authorize>
+<!-- -------------------------------------获取定位--------------------------------------- -->
+<cover-view class="common-func-mo {{openSetting?'show':''}}" wx:if="{{openSetting}}">
+	<cover-view class="getUserInfo">
+		<cover-view class="text_blod">
+			获取不到您的定位
+		</cover-view>
+		<cover-view class="getUseradd">
+			允许"叮叮联盟饭粒网"使用您的定位，以获取您准确的位置
+		</cover-view>
+		<button bindopensetting="callback" class="mos_button" openType="openSetting">开启定位</button>
+		<!-- <cover-view class="liucha-banBen" wx:else>请升级微信版本</cover-view> -->
+	</cover-view>
+</cover-view>

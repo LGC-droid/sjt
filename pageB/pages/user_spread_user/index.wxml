@@ -1,0 +1,126 @@
+<view class="head">
+<open-data class="head-img" type="userAvatarUrl"></open-data>
+	<!-- <image  class="head-img" src="../../img/icon4.png"></image> -->
+	<view class="head-name" wx:if="{{distribution_examine.is_vip==1}}">超级合伙人</view>
+	<!-- <view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade==1}}">一星合伙人></view>
+	<view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade==2}}">二星合伙人></view>
+	<view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade==3}}">三星合伙人></view>
+	<view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade==4}}">四星合伙人></view>
+	<view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade==5}}">五星合伙人></view> -->
+		<view bindtap="gograde" class="head-name" wx:if="{{distribution_examine.is_vip!=1}}">{{distribution_examine.grade}}星合伙人<image class="cell" src="../../img/return.png"></image></view>
+	<view class="head-size">当前等级特权</view>
+	<view class="head-size1">
+		<image class="mini-img" src="../../img/001.png"></image>
+		<text class="mini-size1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;直属会员订单返现分成{{distribution_examine.pro_one_level}}%&nbsp;&nbsp;</text>
+		<text class="mini-size2" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade!=5}}" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{distribution_examine.grade+1}}星可达到{{distribution_examine.superior_pro_one_level}}%</text>
+	</view>
+	<view class="head-size2">
+		<image class="mini-img" src="../../img/001.png"></image>
+		<text class="mini-size1" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;间接会员订单返现分成{{distribution_examine.pro_two_level}}%&nbsp;&nbsp;</text>
+		<text class="mini-size2" wx:if="{{distribution_examine.is_vip!=1 && distribution_examine.grade!=5}}" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{distribution_examine.grade+1}}星可达到{{distribution_examine.superior_pro_two_level}}% </text>
+	</view>
+	<button class="rule" bindtap="shuoming">规则</button>
+</view>
+<!-- ······························数据展示········································· -->
+<view class="demo">
+	<view class="mini-demo">
+		<view class="mini-demo-size">数据展示</view>
+		<view class="mini-demo-size2" bindtap="estimate">查看更多<image class="cell" src="../../img/return.png"></image></view>
+	</view>
+	<i-tabs current="{{ current }}" i-class="tab" bindchange="handleChange">
+		<i-tab key="0" title="今天"></i-tab>
+		<i-tab key="1" title="昨天"></i-tab>
+		<i-tab key="2" title="近7天"></i-tab>
+		<i-tab key="3" title="近30天"></i-tab>
+	</i-tabs>
+	<view wx:if="{{tab1}}">
+		<view class="tab-demo">
+			<view class="tab-demo1">
+				<view class="tab-demo1-sizex">总订单量</view>
+				<view class="tab-demo1-size1">{{data_display.order_total}}</view>
+			</view>
+
+			<view class="tab-demo3">
+				<view class="tab-demo1-size">总收益</view>
+				<view class="tab-demo1-size1">￥{{data_display.total_revenue}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{tab2}}">
+		<view class="tab-demo">
+			<view class="tab-demo1">
+				<view class="tab-demo1-sizex">总订单量</view>
+				<view class="tab-demo1-size1">{{data_display.order_total}}</view>
+			</view>
+			<view class="tab-demo3">
+				<view class="tab-demo1-size">总收益</view>
+				<view class="tab-demo1-size1">￥{{data_display.total_revenue}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{tab3}}">
+		<view class="tab-demo">
+			<view class="tab-demo1">
+				<view class="tab-demo1-sizex">总订单量</view>
+				<view class="tab-demo1-size1">{{data_display.order_total}}</view>
+			</view>
+			<view class="tab-demo3">
+				<view class="tab-demo1-size">总收益</view>
+				<view class="tab-demo1-size1">￥{{data_display.total_revenue}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{tab4}}">
+		<view class="tab-demo">
+			<view class="tab-demo1">
+				<view class="tab-demo1-sizex">总订单量</view>
+				<view class="tab-demo1-size1">{{data_display.order_total}}</view>
+			</view>
+			<view class="tab-demo3">
+				<view class="tab-demo1-size">总收益</view>
+				<view class="tab-demo1-size1">￥{{data_display.total_revenue}}</view>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- ······························积累佣金·········································· -->
+<view class="demo2">
+	<view class="mini-demo2">
+		<view class="mini-demo2-size1">{{distribution_examine.cumulative_money||0}}</view>
+		<view class="mini-demo2-size2">积累佣金（元）</view>
+	</view>
+	<view class="mini-demo2-two">
+		<view class="mini-demo2-size1">{{distribution_examine.not_extract||0}}</view>
+		<view class="mini-demo2-size2">可提现佣金（元）</view>
+	</view>
+	<navigator class="mini-demo2-button" hover-class='none' url='../capital/tixian?capital={{distribution_examine.not_extract||0}}&type=3'>立即提现</navigator>
+</view>
+<!-- ······························底部6个按钮············································ -->
+<view class="demo3">
+	<navigator class="mini-demo3" url='../user_spread_code/index' hover-class="none">
+		<image class="demo3-img" src="../../img/tuiguanghaib.png"></image>
+		<view class="mini-demo3-size">推广海报</view>
+	</navigator>
+	<view class="mini-demo3" bindtap="profit">
+		<image class="demo3-img" src="../../img/shouyi.png"></image>
+		<view class="mini-demo3-size">合伙收益</view>
+	</view>
+	<navigator class="mini-demo3" url='../promoter-list/index?uid={{uid}}' hover-class="none">
+		<image class="demo3-img" src="../../img/tongji.png"></image>
+		<view class="mini-demo3-size1">合伙人统计</view>
+	</navigator>
+	
+	<navigator class="mini-demo3" url='../user_spread_money/withdrawals?type=2&recordCount={{distribution_examine.cumulative_extract||0}}&uid={{uid}}'  hover-class="none">
+		<image class="demo3-img" src="../../img/tixianjilu.png"></image>
+		<view class="mini-demo3-size">提现记录</view>
+	</navigator>
+	<view class="mini-demo3" bindtap="huodong">
+		<image class="demo3-img" src="../../img/huodong.png"></image>
+		<view class="mini-demo3-size">限时活动</view>
+	</view>
+	<view class="mini-demo3"  hover-class="none">
+		<image class="demo3-img" src="../../img/masaike.png"></image>
+		<view class="mini-demo3-size">待开放</view>
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

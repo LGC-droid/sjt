@@ -1,0 +1,8 @@
+<!--pages/explain/explain.wxml-->
+<view style="margin-top:50rpx">
+	<i-cell-group>
+		<view wx:for="{{shuoming_info}}">
+			<i-cell title="{{item.title}}" is-link url="xiangqing?id={{item.id}}"></i-cell>
+		</view>
+	</i-cell-group>
+</view>

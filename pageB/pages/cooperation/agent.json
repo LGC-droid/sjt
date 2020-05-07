@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "城市代理"
+}

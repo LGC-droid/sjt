@@ -1,0 +1,29 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='drawal'>
+	<!-- <view class='bg'>
+<text class='title'>到账银行</text>
+<view class='select-bank'>
+<text class='bank'>请选择到账银行</text>
+<image src='../../../assets/usericon/home_drop-down@2x.png'></image>
+</view>
+</view> -->
+	<view class='money'>用户余额提现</view>
+	<view class='inputs'>
+		<text>￥</text>
+		<input placeholder='请输入提现金额' type='digit' bindinput='inputTitle' value="{{lick_capital}}"></input>
+	</view>
+	<view class='message'>
+		<view class='use-money'>可提余额<text style='color:#02AAB0'>{{capital}}</text>元</view>
+
+		<text bindtap="lick_capital">全部提现</text>
+	</view>
+<view class='next' bindtap="modalcnt" wx:if="{{isLogin && mobile}}">
+		立即提现
+	</view>
+	<button class='next' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber"  wx:if="{{isLogin && !mobile}}">
+		请您先授权
+	</button>
+	<view class="tishi">提现成功后将于24小时内到账微信零钱，周末顺延。如逾期未到账，请查询微信明细，或咨询客服处理</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>
+<!-- <home></home> -->

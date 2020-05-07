@@ -1,0 +1,13 @@
+{
+  "usingComponents": { 
+    "popuppictureandsave": "/components/popuppictureandsave/index",
+    "authorize": "/components/authorize/authorize",
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
+    "i-button": "../../dist/button/index"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black", 
+  "navigationBarTitleText": "进行中订单"
+}
+ 

@@ -1,0 +1,9 @@
+<navbar parameter='{{parameter}}'></navbar>
+<template is="wxParse" data="{{wxParseData:content.nodes}}" />
+<!-- html转wxml -->
+<import src="/wxParse/wxParse.wxml" />
+
+<view wx:if="{{is_shenqing}}">
+	<button bindtap="distribution" class="share">申请成为推广员</button>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

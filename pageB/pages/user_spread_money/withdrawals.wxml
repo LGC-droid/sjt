@@ -1,0 +1,34 @@
+<view class='commission-details'>
+	<view class='promoterHeader bg-color'>
+		<view class='headerCon acea-row row-between-wrapper'>
+			<view>
+				<view class='name'>{{name}}</view>
+				<view class='money'>￥<text class='num'>{{recordCount}}</text></view>
+			</view>
+			<view class='iconfont icon-jinbi1'></view>
+		</view>
+	</view>
+	<view class='sign-record'>
+		<block wx:for="{{recordList}}" wx:key>
+			<view class='list'>
+				<view class='item'>
+					<view class='data'>{{item.createtime}}</view>
+					<view class='listn'>
+						<!-- <block wx:for="{{recordList}}" wx:for-item='child' wx:key> -->
+						<block>
+							<view class='itemn acea-row row-between-wrapper'>
+								<view>
+									<view class='name line1'>{{item.memo}}</view>
+									<!-- <view>{{item.createtime}}</view> -->
+								</view>
+								<view class='num font-color' wx:if="{{item.type == 1}}">+{{item.money}}</view>
+								<view class='num' wx:else>-{{item.money}}</view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

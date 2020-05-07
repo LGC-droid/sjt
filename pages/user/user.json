@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#CE3128",
+  "navigationBarTextStyle": "white", 
+  
+  "navigationBarTitleText": "个人中心"
+  
+}

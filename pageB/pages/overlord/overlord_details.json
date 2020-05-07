@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize",
+    "i-modal": "../../../pages/dist/modal/index"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize",
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "wux-cell-group": "../../../pages/dist/cell-group/index",
+    "wux-cell": "../../../pages/dist/cell/index",
+    "wux-calendar": "../../../pages/dist/calendar/index"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "查看更多"
+}

@@ -1,0 +1,71 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class='my-order'>
+  <view class='header bg-color'>
+
+  </view>
+  <view class='nav acea-row row-around'>
+    <view class='item {{orderStatus==0 ? "on": ""}}' data-status="0" bindtap="statusClick">
+      <view>审核中</view>
+      <view class='num'>{{orderData.unpaid_count || '~'}}</view>
+    </view>
+    <view class='item {{orderStatus==1 ? "on": ""}}' data-status="1" bindtap="statusClick">
+      <view>进行中</view>
+      <view class='num'>{{orderData.unshipped_count || '~'}}</view>
+    </view>
+    <view class='item {{orderStatus==2 ? "on": ""}}' data-status="2" bindtap="statusClick">
+      <view>已完成</view>
+      <view class='num '>{{orderData.received_count || '~'}}</view>
+    </view>
+
+
+  </view>
+  <view class='list'>
+    <view class='item' wx:for="{{orderList}}" wx:key>
+      <view bindtap='goOrderDetails' data-order_id="{{item.order_id}}">
+        <view class='title acea-row row-between-wrapper'>
+          <view>创建时间：{{item.add_time}}</view>
+          <view wx:if="{{item.examine_status == 0}}" class='font-color'>审核中</view>
+          <view wx:elif="{{item.examine_status ==-1}}" class='font-color'>审核失败</view>
+          <view wx:elif="{{item.rate_of_progress ==2}}" class='font-color'>已完成</view>
+          <view wx:elif="{{item.rate_of_progress !=2}}" class='font-color'>进行中</view>
+
+        </view>
+         <view class='item-info acea-row row-between row-top' > 
+            <view class='pictrue'><image src='{{logo ? logo: sj_logo}}'></image></view>
+            <view class='text acea-row row-between'>
+                <view class='money '>(活动剩余天数：{{item.effective_time_one}}天)</view>
+                <view class='money'>
+                  <view>活动总数：{{item.task_sum || 0}}</view>
+                   <view>剩余总数：{{item.surplus_task_sum || 0}}</view>
+                   
+                    <view>当日活动数：{{item.same_day_task_sum || 0}}</view>
+                     <view>当日剩余数：{{item.same_day_surplus_task_sum || 0}}</view>
+                </view>
+            </view>
+          </view>
+        <view class='item-info acea-row row-between row-top' wx:if="{{item.examine_status ==-1}}">
+          <view>
+            <view class='name '>失败原因：{{item.fail_reason}}</view>
+          </view>
+        </view>
+        <view class='totalPrice'>佣金
+          <text class='money font-color'>￥{{item.commission}}</text>
+        </view>
+      </view>
+      <view class='bottom acea-row row-right row-middle'>
+        <view class='bnt cancelBnt' wx:if="{{item.examine_status ==-1}}" data-tid="{{item.id}}"  bindtap='cancelOrder'>删除活动</view> 
+        <view class='bnt bg-color' wx:elif="{{item.rate_of_progress ==2}}" data-order_id="{{item.order_id}}" bindtap='goOrderDetails'>删除记录</view>
+        <view class='bnt bg-color' wx:elif="{{item.rate_of_progress !=2 &&item.examine_status ==1}}" data-tid="{{item.id}}" data-sid="{{item.sid}}" bindtap='goOrderDetails'>查看活动</view>
+      
+      </view>
+    </view>
+  </view>
+  <view class='loadingicon acea-row row-center-wrapper' wx:if="{{loading}}">
+    <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadTitle}}
+  </view>
+</view>
+<view class='noCart' wx:if="{{orderList.length == 0 }}">
+  <view class='pictrue'>
+    <image src='../../img/noOrder.png'></image>
+  </view>
+</view>

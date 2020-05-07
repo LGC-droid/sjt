@@ -1,0 +1,64 @@
+<navbar parameter='{{parameter}}'></navbar>
+<form bindsubmit="subRefund" report-submit='true'>
+	<view class='apply-return'>
+
+		<view class='list'>
+			<!-- <view class='item acea-row row-between-wrapper'>
+        <view>收款方式选择</view>
+       <picker class='num' bindchange="bindPickerChange" value="{{index}}" range="{{bankArray}}">
+              <view class="picker acea-row row-between-wrapper">
+                <view class='reason'>{{bankArray[index]}}</view>
+                <text class='iconfont icon-jiantou'></text>
+              </view>
+          </picker>
+      </view  >
+      <block  wx:if="{{zfb_type}}">
+     
+ <view class='item acea-row row-between-wrapper'>
+        <view>姓名</view>
+        <input class='num' value="{{orderInfo.cardholder}}" placeholder="请输收款人姓名" name="cardholder"></input>
+      </view>
+       <view class='item acea-row row-between-wrapper'>
+        <view>支付宝账号</view>
+        <input class='num' value="{{orderInfo.bank_card_number}}" placeholder="请输入支付宝账号" name="bank_card_number"></input>
+      </view>
+      </block>
+      <view class='item acea-row row-between'>
+        <view class='title acea-row row-between-wrapper'>
+          <view>上传收款码</view>
+ <view class='tip'>( 微信或支付宝的收款码 )</view>
+        </view>
+        <view class='upload acea-row row-middle'>
+              <view class='pictrue' wx:for="{{payment_code}}">
+                <image data-img="{{item}}" bindtap="previewImg" src='{{item}}'></image>
+                <view class='iconfont icon-guanbi1 font-color' bindtap='DelPic'    data-index='{{index}}'></view>
+              </view>
+              <view class='pictrue acea-row row-center-wrapper row-column' bindtap='uploadpic' wx:if="{{payment_code.length < 1}}">
+                <text class='iconfont icon-icon25201'></text>
+                <view>上传收款码</view>
+              </view>
+          </view>
+      </view> -->
+		</view>
+		<button wx:if="{{orderInfo.examine_status ==0}}" class='returnBnt bg-color' disabled="disabled" form-type="submit">审核中</button>
+
+		<button wx:elif="{{orderInfo.examine_status ==-1 && orderInfo.cx_tixian}}" class='returnBnt bg-color' form-type="submit">重新提现</button>
+		<!-- <button wx:else class='returnBnt bg-color'   form-type="submit">立即提现</button>  -->
+	</view>
+</form>
+
+
+<!-- 审核失败原因 -->
+<view class='apply-return'>
+	<view class='list'>
+
+		<view class='item textarea acea-row row-between' wx:if="{{orderInfo.examine_status ==-1}}">
+			<view>审核失败原因：</view>
+			<textarea disabled class='num'>{{orderInfo.fail_reason}}</textarea>
+		</view>
+	</view>
+
+
+</view>
+
+<authorize bind:onLoadFun="onLoadFun"></authorize>

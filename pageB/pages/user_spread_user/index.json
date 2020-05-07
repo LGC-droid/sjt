@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize",
+    "i-tabs": "../../../pages/dist/tabs/index",
+    "i-tab": "../../../pages/dist/tab/index"
+  },
+  "navigationBarTextStyle": "white"
+}

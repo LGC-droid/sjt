@@ -1,0 +1,59 @@
+<!-- ·····················订单进入会员页面的样式···································· -->
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+<view class="shuoming">
+  <view class="shuoming-demo" bindtap="shuoming">
+    <image class="shuoming-img" src="../../img/careful.png"></image>
+    <view class="shuoming-size">叮叮饭粒红包使用说明</view>
+  </view>
+  <view class="quick" bindtap="prompt">快捷兑券></view>
+</view>
+<view  wx:if="{{oid}}">
+<radio-group>
+	<view wx:for="{{coupon}}" bindtap='goIndex' data-cashback_increases_value="{{item.cashback_increases_value}}" data-type="{{item.type}}" data-id="{{item.id}}" data-state="{{item.state}}">
+		<view class="demo">
+			<view class="{{item.state?'demo-up':'demo-up2'}}">
+				<text class="{{item.state?'money':'money2'}}">￥</text>
+				<view class="{{item.state?'number':'number2'}}">{{item.cashback_increases_value}}</view>
+				<view class="{{item.state?'coupon':'coupon2'}}">{{item.coupon}}</view>
+				<view class="{{item.state?'name':'name2'}}">{{item.name}}</view>
+				<view class="{{item.state?'time':'time2'}}">有效期至{{item.due_time}}</view>
+				<radio class="red margin-left-sm" disabled="{{!item.state}}" checked='{{checked}}'></radio>
+				<view class="yuan"></view>
+				<view class="yuan1"></view>
+			</view>
+			<view class="{{item.state?'demo-down':'demo-down2'}}">
+				<view class="{{item.state?'size':'size2'}}" wx:if="{{!item.state}}">使用条件: {{item.msg}}</view>
+			</view>
+		</view>
+	</view>
+</radio-group>
+</view>
+
+
+
+<!-- ···························点击我的页面跳转进来的样式····························· -->
+<view wx:else>
+<view class="demo" wx:for="{{coupon}}" >
+	<view class="demo-up">
+		<text class="money">￥</text>
+		<view class="number">{{item.cashback_increases_value}}</view>
+		<view class="coupon">{{item.coupon}}</view>
+		<view class="name">{{item.name}}</view>
+		<view class="time">有效期至{{item.due_time}}</view>
+		<button  bindtap="immediately" class="btn" wx:if="{{item.state}}" >立即使用</button>
+		<view class="yuan"></view>
+		<view class="yuan1"></view>
+	</view>
+	<view class="demo-down">
+		<view class="size">使用条件:{{item.msg}}</view>
+	</view>
+</view>
+</view>
+
+ 
+<view>
+	<image wx:if="{{!coupon.length}}" class="kong" src="../../img/ddkzt.png"></image>
+	<button wx:if="{{!member_status}}" class="open-btn" bindtap="click">开通会员</button>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

@@ -1,0 +1,143 @@
+<view class="head">
+	<view wx:if="{{isLogin}}">
+		<view class="head-img">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<open-data type="userNickName" class="head-name"></open-data>
+	</view>
+	<view wx:else>
+		<image src="../../imgs/icon4.png" class="head-img"></image>
+		<view class="head-name">未登录</view>
+	</view>
+	<view>
+		<view wx:if="{{user_info.is_distribution ==0}}" bindtap="distribution">
+			<image src="/imgs/sqcwtgy.png" class="head-img1"></image>
+		</view>
+		<view wx:else bindtap="distribution">
+			<image src="/imgs/rjhhr.png" wx:if="{{user_info.is_vip==1}}" class="head-img1"></image>
+			<image src="/imgs/1.png" wx:elif="{{user_info.is_vip==0 && user_info.grade ==1}}" class="head-img1"></image>
+			<image src="/imgs/2.png" wx:elif="{{user_info.is_vip==0 && user_info.grade ==2}}" class="head-img1"></image>
+			<image src="/imgs/3.png" wx:elif="{{user_info.is_vip==0 && user_info.grade ==3}}" class="head-img1"></image>
+			<image src="/imgs/4.png" wx:elif="{{user_info.is_vip==0 && user_info.grade ==4}}" class="head-img1"></image>
+			<image src="/imgs/5.png" wx:elif="{{user_info.is_vip==0 && user_info.grade ==5}}" class="head-img1"></image>
+		</view>
+	</view>
+	<image wx:if="{{user_info.member_status ==1}}" class="head-img2" src="../../imgs/wode-huiyuan.png"></image>
+	<button wx:if="{{!user_info.mobile}}" class='pop_btn' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">手机号授权</button>
+	<view class="head-demo" bindtap="click">
+		<view class="ddhy">叮叮会员</view>
+		<view class="dd-vip">会员获得更多专享权益</view>
+		<button class="dd-btn" wx:if="{{user_info.member_status==1}}">立即查看</button>
+		<button class="dd-btn" wx:else>立即开通</button>
+	</view>
+</view>
+<!-- ·······································我的钱包··································· -->
+<view class="demo">
+	<view class="mini-demo" bindtap="capital">我的钱包 <image class="cell" src="../../imgs/return.png"></image></view>
+	<view class="mini-demo2">
+		<view class="mini-cen" bindtap="capital" data-state="jinxing">
+			<view class="mini-up">{{order_sum.yue_jl}}</view>
+			<view class="mini-down">返现余额</view>
+		</view>
+		<view class="mini-cen" bindtap="distribution">
+			<view class="mini-up">{{order_sum.yongjin_jl}}</view>
+			<view class="mini-down">推广余额</view>
+		</view>
+		<view class="mini-cen">
+			<view class="mini-up">{{order_sum.tixian_jl}}</view>
+			<view class="mini-down">提现中金额</view>
+		</view>
+		<view class="mini-cen">
+			<view class="mini-up">{{order_sum.daifanxian_jl}}</view>
+			<view class="mini-down">待返金额</view>
+		</view>
+	</view>
+</view>
+<!-- ········································中间banner··································· -->
+<view wx:if="{{!ISPAID}}">
+	<image wx:if="{{user_info.is_distribution ==0}}" bindtap="distribution" class="banners" src="/imgs/fxybanner.png"></image>
+	<image wx:else bindtap="fenxiang" class="banners" src="/imgs/ffhxbanner.png"></image>
+</view>
+<!-- ·········································订单·········································· -->
+<view class="demo2">
+	<view bindtap="myfaburenwu" data-state="jinxing">
+		<view class="mini2-up">{{order_sum.jinxing ||0}}</view>
+		<view class="mini2-down">进行中</view>
+	</view>
+	<view bindtap="myfaburenwu" data-state="wancheng">
+		<view class="mini2-up">{{order_sum.wancheng ||0}}</view>
+		<view class="mini2-down">已完成</view>
+	</view>
+	<view bindtap="myfaburenwu" data-state="shibai">
+		<view class="mini2-up">{{order_sum.shibai ||0}}</view>
+		<view class="mini2-down">已失败</view>
+	</view>
+	<view>
+		<image class="mini2-img" src="../../imgs/orders.png"></image>
+		<view class="mini2-downs">返现清单</view>
+	</view>
+</view>
+
+<!-- ·········································我的·········································· -->
+<view class="demo3">
+	<view class="mini3-demo3-top">我的服务</view>
+	<view>
+		<view class="mini3-demo3-down">
+			<view class="demo3-img-two" wx:if="{{!ISPAID}}" bindtap="distribution" data-state="wancheng">
+				<image class="demo3-img" src="../../imgs/hehuoren.png"></image>
+				<view class="demo-size">合伙人</view>
+			</view>
+			<view class="demo3-img-one" bindtap="member">
+				<image class="demo3-img" src="../../imgs/huiyuan.png"></image>
+				<view class="demo-size">会员中心</view>
+			</view>
+
+			<view class="demo3-img-three" bindtap="wkf">
+				<image class="demo3-img" src="../../imgs/qiandao.png"></image>
+				<view class="demo-size">签到</view>
+			</view>
+			<view class="demo3-img-four" bindtap="wallet">
+				<image class="demo3-img" src="../../imgs/hongbao.png"></image>
+				<view class="demo-size">红包</view>
+			</view>
+		</view>
+		<view class="mini3-demo3-down">
+			<view class="demo3-img-two" bindtap="wkf">
+				<image class="demo3-img" src="../../imgs/jifen.png"></image>
+				<view class="demo-size">米粒</view>
+			</view>
+			<view class="demo3-img-three" bindtap="gohelp" data-state="shibai">
+				<image class="demo3-img" src="../../imgs/bangzhu.png"></image>
+				<view class="demo-size">帮助</view>
+			</view>
+			<view class="demo3-img-four">
+				<view class="list_fukuanimg">
+					<button class="kefu-img" role="button" openType="contact" sessionFrom="weapp"></button>
+				</view>
+				<button class="kefu-button nobtn" openType="contact" sessionFrom="weapp">客服</button>
+			</view>
+			<view class="demo3-img-one" bindtap="hezuo">
+				<image class="demo3-img" src="../../imgs/cooperation.png"></image>
+				<view class="demo-size">我要合作</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+
+<!-- ·····································返现清单·································· -->
+
+
+
+
+
+<!-- ··············································左右滑动························ -->
+<scroll-view wx:if="{{shuoming_info.length}}" scroll-x="true" style=" white-space: nowrap; display: flex">
+	<!-- display: inline-block-->
+	<navigator url="/pageB/pages/explain/xiangqing?id={{item.id}}" class="body-views" wx:for="{{shuoming_info}}">
+		<view style="font-size:32rpx;color:#a97639">{{item.title}}</view>
+		<view style="font-size:26rpx;color:#818180">{{item.describe}}</view>
+	</navigator>
+</scroll-view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

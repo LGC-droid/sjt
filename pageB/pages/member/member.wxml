@@ -1,0 +1,62 @@
+<!-- ·························开通会员的样式····································· -->
+<view>
+	<view class="head">  
+		<view class="head-img">
+		<open-data  type="userAvatarUrl"></open-data>  
+		</view> 
+		<open-data type="userNickName"  class="phone" ></open-data>
+		<view class="member">当前已开通叮叮会员</view>
+		<view class="head-demo">
+			<view bindtap="wallet">
+				<view class="head-size1">可用增额券{{CURRENT.surplus_cashback_increases_sum}}张</view>
+				<view class="head-size2">{{CURRENT.end_time}}</view>
+			</view>
+			<image class="xian" src="../../img/xian.png"></image>
+			<view>
+ 				<view class="head-size1">待发放增额券{{NEXT.total_uncollected}}张</view>
+				<view class="head-size2">{{NEXT.start_time}}</view> 
+			</view>
+		</view>
+	</view>
+	<view class="neck">
+		<view class="ddhy">叮叮会员</view>
+		<view class="use">使用中</view>
+		<view class="money-month">最低￥{{minimum_amount}}/月</view>
+		<button class="renew" plain="true" bindtap="renews">续费</button>
+	</view>
+</view>
+
+<!-- ·························未开通会员样式·································· -->
+<!-- <view>
+	<view class="heads">
+		<image class="head-img" src="../../../imgs/icon4.png"></image>
+		<view class="phone">135****5555</view>
+		<view class="member">您暂未开通会员</view>
+		<view class="necks">
+			<view class="ddhy">叮叮会员</view>
+			<view class="uses">开通会员即享3大特权</view>
+			<view class="money-month">最低￥10.00/月</view>
+			<button class="renew" plain="true">立即开通</button>
+		</view>
+	</view>
+</view> -->
+
+<!-- src="{{banner_data.image}}" -->
+<image class="neck-img" wx:if="{{is_banner}}" src="../../img/hyzx1.png"></image>
+<view class="privilege">会员特权</view>
+<view class="demo" bindtap="tqone">
+	<view class="first">特权1</view>
+	<view class="receive">每月领会员专属返现</view>
+	<image class="demo-img" src="../../img/tequan1.png"></image>
+</view>
+<view class="demo" >
+	<view class="first">特权2</view>
+	<view class="receive">会员可以提升合伙人等级一级</view>
+	<image class="demo-img" src="../../img/tequan2.png"></image>
+</view>
+<view class="demo" bindtap="tqtwo">
+	<view class="first">特权3</view>
+	<view class="receive">会员获得积分翻倍</view>
+	<image class="demo-img" src="../../img/tequan3.png"></image>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

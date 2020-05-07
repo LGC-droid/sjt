@@ -1,0 +1,151 @@
+.page {
+    background-color: #f9f9f9;
+}
+
+.walletbox {
+    width: 100%;
+    text-align: center;
+}
+
+.mtitle {
+    color: #333;
+    padding: 40rpx 0 20rpx;
+    font-size: 40rpx
+}
+
+.moneybox {
+    margin: 25rpx 0;
+    color: #d6a841;
+    font-size: 70rpx;
+    font-weight: bold;
+}
+
+.mingxi {
+    margin: 20rpx 0;
+    color: #d6a841;
+    font-size: 30rpx;
+}
+
+.shareBtn {
+    position: relative;
+    background-color: red;
+    height: 100rpx;
+    margin-top: -100rpx;
+    width: 100%;
+    z-index: 2;
+}
+
+.yqylbox {
+    width: 100%;
+}
+
+.yqyl {
+    padding: 30rpx;
+}
+
+.yqyl-item1 {
+    color: #333;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+    overflow: hidden;
+}
+
+.yqyl-item1-1 {
+    float: left;
+}
+
+.yqyl-item1-2 {
+    float: right;
+    padding: 2px 5px;
+    background-color: #b3b3b3;
+    border-radius: 10rpx;
+    color: #fff;
+}
+
+.yqyl-item2 {
+    font-size: 60rpx;
+    font-weight: 600;
+    color: #d6a841;
+    margin: 50rpx 0;
+}
+
+.yqyl-item3 {
+    overflow: hidden;
+    font-size: 30rpx;
+}
+
+.yqyl-item3-1 {
+    float: left;
+    width: 50%;
+    border-right: 0.5px solid #999;
+    box-sizing: border-box;
+    color: #999;
+}
+
+.yqyl-item3-1-1 {
+    color: #333;
+}
+
+.yqyl-item3-2 {
+    float: left;
+    width: 50%;
+    text-indent: 30rpx;
+    color: #999;
+}
+
+.yqyl-item3-2-1 {
+    color: #333;
+}
+
+.yqyl-menu {
+    padding: 20rpx;
+}
+
+.yqyl-menu-item {
+    background-color: #fff;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-bottom: 20rpx;
+    text-indent: 30rpx;
+    overflow: hidden;
+}
+
+.yqyl-menu-item-1 {
+    float: left;
+    color: #333;
+    font-size: 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+}
+
+.yqyl-menu-item-2 {
+    float: right;
+}
+
+.yqyl-menu-item-2 label {
+    color: #999;
+    margin-right: 20rpx;
+}
+
+.yqyl-menu-item-2 image {
+    width: 20rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    height: 49px;
+    line-height: 49px;
+    width: 100%;
+    background: #f47667;
+}
+
+.bottomPadding {
+    height: 70px;
+}

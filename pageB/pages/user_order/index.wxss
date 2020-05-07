@@ -1,0 +1,150 @@
+.yxms {}
+
+.yxmsbox {
+    overflow: hidden;
+    color: #333;
+}
+
+.yxms-item {
+    padding: 20rpx 20rpx;
+    border-bottom: 0.5px solid #f0f0f0;
+    overflow: hidden;
+}
+
+.yxms-l {
+    float: left;
+    width: 180rpx;
+}
+
+.yxms-l image {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 5rpx;
+}
+
+.yxms-r {
+    width: 710rpx;
+}
+
+.yxms-title {
+    margin: 10rpx 0;
+    width: 100%;
+    overflow: hidden;
+    height: 34rpx;
+    line-height: 34rpx;
+}
+
+.yxms-title .name {
+    float: left;
+    font-size: 30rpx;
+}
+
+.yxms-title .name2 {
+    font-size: 28rpx;
+    color: #aca7c0;
+}
+
+.yxms-title .pricebox {
+    float: right;
+    color: #d6a841;
+    font-size: 28rpx;
+}
+
+.price {
+    color: #d6a841;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.yxms-jianjie {
+    width: 100%;
+    margin: 20rpx 0;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.yxms-jianjie .jj-item {
+    font-size: 26rpx;
+    margin-right: 10rpx;
+}
+
+.yxms-jianjie .xjpf {
+    padding: 2rpx 10rpx;
+    color: #fff;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+}
+
+.yxms-jianjie .xjpf1 {
+    background-color: #fcaf09;
+}
+
+.rw-sx {
+    color: #ccc;
+}
+
+.yxms-jianjie .xjpf2 {
+    background-color: #e4bd9d;
+}
+
+.yxms-jianjie .xjpf3 {
+    background-color: #aca7c0;
+}
+
+.yxms-jianjie .xjpf0 {
+    background-color: #fd9205;
+}
+
+.yxms-tags {
+    margin: 10rpx 0;
+    font-size: 30rpx;
+    width: 100%;
+    overflow: hidden;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.yxms-tagsbox {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666;
+    width: 360rpx;
+    height: 4prpx;
+    line-height: 40rpx;
+    float: left;
+}
+
+.yxms-tagsbox label {
+    padding: 2rpx 10rpx;
+    background-color: #f6f6f6;
+    color: #666;
+    border-radius: 8rpx;
+    font-size: 20rpx;
+    margin-right: 10rpx;
+    margin-top: -2rpx;
+}
+
+.yxms-look {
+    float: right;
+    font-size: 24rpx;
+    width: 245rpx;
+    color: #666;
+    text-align: right;
+}
+
+.state-imgs {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 40rpx;
+    margin-top: -120rpx;
+}
+
+.state-imgs-top {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 40rpx;
+    margin-top: -110rpx;
+}

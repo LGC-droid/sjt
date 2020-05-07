@@ -1,0 +1,34 @@
+<!--pages/member/membership.wxml-->
+<view class="head">
+	<view class="head-size">每月领会员专属返现</view>
+	<view class="head-box">
+		<text class="head-size1">叮叮会员专享 </text>
+		<text class="head-size2"> 3 </text>
+		<text class="head-size1"> 大特权</text>
+	</view>
+	<button bindtap="renews" class="btn"><text class="btn-size1">￥</text><text class="btn-size">{{minimum_amount}}</text><text class="btn-size2">叮叮会员</text></button>
+</view>
+<view class="bodys">
+	<view class="bodys-size">尊享会员3大特权</view>
+	<image class="bodys-img" src="../../img/money.png" />
+	<image class="bodys-img1" src="../../img/integral.png" />
+	<image class="bodys-img2" src="../../img/raise.png" />
+	<view class="bodys-size1">每单额外获取现金</view>
+	<view class="bodys-size2">提升分销金额</view>
+	<view class="bodys-size3">获得积分翻倍</view>
+</view>
+<view class="demo" bindtap="tqone">
+	<view class="first">特权1</view>
+	<view class="receive">每月领会员专属返现</view>
+	<image class="demo-img" src="../../img/tequan1.png"></image>
+</view>
+<view class="demo" >
+	<view class="first">特权2</view>
+	<view class="receive">会员可以提升合伙人等级一级</view>
+	<image class="demo-img" src="../../img/tequan2.png"></image>
+</view>
+<view class="demo2" bindtap="tqtwo">
+	<view class="first">特权3</view>
+	<view class="receive">会员获得积分翻倍</view>
+	<image class="demo-img" src="../../img/tequan3.png"></image>
+</view>

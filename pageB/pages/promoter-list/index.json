@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize",
+    "wux-select": "../../../pages/dist/select/index",
+    "wux-calendar": "../../../pages/dist/calendar/index",
+    "wux-toast": "../../../pages/dist/toast/index"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "合伙人统计"
+}

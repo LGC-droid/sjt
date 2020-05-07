@@ -1,0 +1,141 @@
+page {
+  background: white;
+}
+ .titles{
+   display: flex;
+   align-items: center;
+   margin-top: 14rpx;
+ }
+.title {
+  font-size: 40rpx;
+  color: #101010;
+  margin-left: 18rpx;
+  
+}
+.lightning{
+  width: 50rpx;
+  height: 50rpx;
+  
+  margin-left: 32rpx;
+}
+.title2 {
+  font-size: 26rpx;
+  color: #848282;
+  margin-left: 32rpx;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+.title3{
+  font-size: 26rpx;
+  color: #e83422;
+  margin-left: 32rpx;
+  margin-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+
+.demo {
+  width: 365rpx;
+  height: 520rpx;
+  border: 1rpx solid white;
+  position: relative;
+}
+
+.demo-ban {
+  width: 320rpx;
+  height: 320rpx;
+  position: absolute;
+  border-radius: 12rpx;
+  top: 20rpx;
+  left: 26rpx;
+}
+
+.demo-name {
+  width: 312rpx;
+  color: #101010;
+  font-size: 26rpx;
+  position: absolute;
+  top: 360rpx;
+  left: 32rpx;
+
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+word-wrap: normal;
+
+}
+
+.symbol {
+  font-size: 28rpx;
+  color: #EB5940;
+  position: absolute;
+  top: 404rpx;
+  left: 32rpx;
+}
+
+.price {
+  font-size: 36rpx;
+  color: #EB5940;
+  position: absolute;
+  top: 396rpx;
+  left: 88rpx;
+}
+
+.distance {
+  color: #848282;
+  font-size: 24rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 409rpx;
+}
+
+.platform {
+  font-size: 24rpx;
+  color: #353434;
+  position: absolute;
+  left: 33rpx;
+top: 450rpx;
+
+}
+
+.platform-logo {
+  width: 35rpx;
+  height: 35rpx;
+  position: absolute;
+  left: 106rpx;
+  top: 450rpx;
+}
+
+.progress {
+  margin-top: 454rpx;
+  margin-left: 144rpx;
+  height: 24rpx;
+  width: 200rpx;
+}
+
+.surplus {
+  font-size: 18rpx;
+  color: #FFFFFF;
+  position: absolute;
+  top: 453rpx;
+  left: 176rpx;
+}
+.flexd{
+  display: flex;
+  flex-wrap: wrap;
+}
+.overload{
+  width: 128rpx;
+  height: 56rpx;
+  position: absolute;
+  left: 40rpx;
+  top: 14rpx;
+}
+.menb{
+  width: 325rpx;
+  height: 320rpx;
+  position: absolute;
+  left: 25rpx;
+  top: 20rpx;
+  border-radius: 12rpx;
+
+}

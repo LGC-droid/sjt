@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "提现记录"
+
+}

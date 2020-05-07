@@ -1,0 +1,133 @@
+<!--pages/overlord/overlord_details.wxml-->
+<swiper class="screen-swiper square-dot pictures" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+	<swiper-item wx:for="{{merchants.com_image_res}}" wx:key>
+		<image src="{{item}}" mode="aspectFill"></image>
+		<video src="{{item}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover"></video>
+	</swiper-item>
+</swiper>
+
+<view class="business-name">{{merchants.mname}}</view>
+<view class="times" wx:if="{{merchants.business_time}}"> 
+  <view class="times-name">营业时间:</view>
+	<view class="times-time" wx:for="{{merchants.business_time}}">{{item.start_time}}-{{item.end_time}}</view> 
+ 
+</view>
+<view class="moneys">
+	<text class="platform">使用平台：{{takeaway_platform==1?'美团':'饿了么'}}</text>
+	<image class="platform-logo" src="{{takeaway_platform==1?'../../img/mt1_Y.png':'../../img/elm_b.png'}}"></image>
+	<view class="cd">
+		<view wx:if="{{is_place_order !=0}}">
+			<view class="cds" wx:if="{{is_place_order ==1 && bwc_is_pay==1}}">距提交订单还剩：</view>
+			<view class="cdss" wx:elif="{{is_place_order ==1 && bwc_is_pay==0}}">剩余支付时间：</view>
+
+			<view class="countdown">{{c3}}</view>
+		</view>
+
+	</view>
+
+</view>
+<view class="pla">
+	<view class="number-money">返现: {{task_details.commission}}元</view>
+	<view class="robbed">剩余{{task_details.same_day_surplus_task_sum||0}}份</view>
+</view>
+
+<!-- ······································霸王餐须知············································· -->
+<view class="explain">霸王餐须知</view>
+<view class="txtx">需先支付1元抢占霸王餐名额</view>
+<view class="dis-img">
+<image class="yes" src="../../img/yes.png"></image>
+<view class="gradient">评价返现梯度</view>
+</view>
+<!-- <view class="flexd" wx:for="{{merchants.bwc_rule}}">
+	<image class="yes" src="../../img/yes.png"></image>
+	<view class="{{item.weight ==0?'texts':'text'}}">{{item.msg}}</view>
+</view> -->
+<!-- ···························红色字····································· -->
+<view class="flexd" wx:for="{{merchants.bwc_gradient}}">
+
+	<view class="text">{{item.msg}}￥{{item.val}}</view>
+</view>
+
+<!-- ···························黑色字····································· -->
+<view class="flexd" wx:for="{{merchants.bwc_rule}}">
+	<image class="yes" src="../../img/yes.png"></image>
+	<view class="texts">{{item.msg}}</view>
+</view>
+
+<view class="dview">
+	<view class="dview-up">
+		<!-- <view class="padding">
+			<view class="cu-avatar-group">
+				<view class="cu-avatar round lg" wx:for="{{6}}" wx:key style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big1000{{index+1}}.jpg);"></view>
+			</view>
+		</view> -->
+		<view class="tanxing">
+				<image src="{{get_user_head_res[0]}}" class="imgs2"></image>
+				<view wx:for="{{get_user_head_res}}" class="img3">
+					<image wx:if="{{index !=0}}" src="{{item}}" class="imgs4"></image>
+				</view>
+
+			</view>
+		<button class="qiang" data-id="shareBtn"  bindtap="yaoqing">邀请好友一起抢</button>
+	</view>
+	<view class="dw-d">
+	<image class="dw-img" src="../../img/warm-prompt.png"></image>
+	<view class="dw-title">叮叮饭粒福利群</view>
+	<view class="dw-center">添加客服微信，进叮叮专属福利群，领取叮叮专属福利，每日粉丝福利礼包</view>
+	<button class="tianjia" bindtap="tianjia">添加</button>
+		<i-modal title="联系客服" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3">
+					<view class="tjwx">添加客服微信，为您提供24*7服务帮助，还可以加入叮叮饭粒外卖福利群，领取粉丝专属实物福利礼品</view>
+				</i-modal>
+	</view>
+</view>
+<view class="box"></view>
+<!-- <view class="countdown">倒计时 {{ c3 }}</view> -->
+<!-- ······································底部button············································· -->
+<view class="flex">
+	<button class="button-box" data-id="shareBtn" role="button" openType="contact" sessionFrom="weapp">
+		<button class="kefu-img bu-img">
+		</button>
+		<view class="size">客服</view>
+	</button>
+	<view wx:if="{{task_details.is_start_robbing==0}}"><button class="buying2">
+			<text class="sss" space="nbsp" decode="{{true}}">距</text>
+			<text class="sss">开</text>
+			<text class="sss">抢</text>： {{c5}}</button></view>
+	<view wx:else>
+		
+		<button class="buying2"  wx:if="{{is_place_order ==-1 && task_details.same_day_surplus_task_sum==0}}">一元抢购</button>
+		<button class="buying" bindtap="up_pingzheng" wx:if="{{is_place_order ==1 && bwc_is_pay==1}}">上传凭证</button>
+		<button class="buying" bindtap="liji_zhifu" wx:elif="{{is_place_order ==1 && bwc_is_pay==0}}">立即支付</button>
+		<button class="buying" bindtap="linrenwu" wx:elif="{{is_place_order ==0 && task_details.same_day_surplus_task_sum!=0}}">一元抢购</button>
+		<!-- <button class="buying2"  wx:elif=" {{task_details.same_day_surplus_task_sum==0}}">已售罄</button> -->
+	</view>
+	<view wx:if="{{bwc_is_pay==1}}">
+		<button class="see" bindtap="jumpDetails_elm" wx:if="{{takeaway_platform==2}}">去下单</button>
+		<button class="see" bindtap="jumpDetails_mt" wx:if="{{takeaway_platform==1}}" data-id="{{data.renwu.id}}">去下单</button>
+	</view>
+	<view wx:else>
+		<button class="see" bindtap="jumpDetails_elm" wx:if="{{takeaway_platform==2}}">查看门店</button>
+		<button class="see" bindtap="jumpDetails_mt" wx:if="{{takeaway_platform==1}}" data-id="{{data.renwu.id}}">查看门店</button>
+	</view>
+</view>
+<!-- ······································切换······································ -->
+<view wx:if="{{task==0}}">
+	<image wx:if="{{takeaway_platform ==2}}" src="../../img/GroupCopy.png" bindtap="qiehuan" class="qiehuan"></image>
+	<image wx:else src="../../img/GroupCopy1.png" bindtap="qiehuan" class="qiehuan"></image>
+</view>
+<view else></view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>
+<import src="/wxParse/wxParse.wxml" class="sssss" />
+<!-- -------------------------------------获取定位--------------------------------------- -->
+<cover-view class="common-func-mo {{openSetting?'show':''}}" wx:if="{{openSetting}}">
+	<cover-view class="getUserInfo">
+		<cover-view class="text_blod">
+			获取不到您的定位
+		</cover-view>
+		<cover-view class="getUseradd">
+			允许"叮叮联盟饭粒网"使用您的定位，以获取您准确的位置
+		</cover-view>
+		<button bindopensetting="callback" class="mos_button" openType="openSetting">开启定位</button>
+		<!-- <cover-view class="liucha-banBen" wx:else>请升级微信版本</cover-view> -->
+	</cover-view>
+</cover-view>

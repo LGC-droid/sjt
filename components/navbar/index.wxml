@@ -1,0 +1,14 @@
+<view class='navbar {{parameter.class}} {{parameter.class_details}}' style='height:{{navH}}rpx'>
+   <view class='navbarH' style='height:{{navH}}rpx;'>
+      <view class='navbarCon acea-row row-center-wrapper' wx:if='{{parameter.navbar==0}}'>
+         <view class='search acea-row row-middle' bindtap='setGoodsSearch'><text class='iconfont icon-xiazai5'></text>搜索商家</view>
+         <view class='logo'><image src='{{logo_url}}'></image></view>
+      </view>
+      <view class='navbarCon acea-row row-center-wrapper' wx:if='{{parameter.navbar==1}}'>
+         <view class='name {{parameter.color==true?"on":""}} line1'>{{parameter.title}}</view>
+         <view class='iconfont icon-xiangzuo {{parameter.color==true?"on":""}}' wx:if='{{parameter.return==1}}' bindtap='return'></view>
+          <!-- <view class='iconfont icon-shouye-xianxing {{parameter.color==true?"on":""}}' wx:if='{{parameter.return==-1}}' bindtap='return_index'></view> -->
+      </view>
+   </view>
+</view>
+<view style='height:{{navH}}rpx'></view>

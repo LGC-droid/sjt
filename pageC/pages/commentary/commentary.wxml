@@ -1,0 +1,11 @@
+<!--pageC/pages/commentary/commentary.wxml-->
+<image class="{{type==1?'bans':'ban'}}" src="{{urls}}"></image>
+<!-- <view wx:if="{{type==1}}">
+ <image src="../../img/hebing.png" class="bans"></image>
+</view>
+<view wx:if="{{type==2}}">
+ <image src="../../img/elm.png" class="ban"></image>
+</view>
+<view wx:if="{{type==3}}">
+ <image src="../../img/mt.png" class="ban"></image>
+</view> -->

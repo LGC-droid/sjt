@@ -1,0 +1,142 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.2",
+	"appid": "wx26e18c3b9a4fcc09",
+	"projectname": "%E9%80%9F%E8%BF%9B%E5%9B%BE%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%89%8D%E7%AB%AF%E7%94%A8%E6%88%B7%E7%89%882.0",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "scene=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员",
+					"pathName": "pageB/pages/member/member",
+					"query": "PAID=2213&spid=1111",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pageB/pages/user_spread_user/index",
+					"pathName": "pageB/pages/user_spread_user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pageB/pages/promoter-list/index",
+					"pathName": "pageB/pages/promoter-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pageB/pages/user_spread_user/index",
+					"pathName": "pageB/pages/user_spread_user/index",
+					"query": "scene=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "合作",
+					"pathName": "pageB/pages/cooperation/cooperation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pageB/pages/cooperation/agent",
+					"pathName": "pageB/pages/cooperation/agent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "软件服务",
+					"pathName": "pageB/pages/cooperation/service",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pageB/pages/overlord/overlord_details",
+					"pathName": "pageB/pages/overlord/overlord_details",
+					"query": "spid=1&takeaway_platform=2&sid=118&tid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pageB/pages/merchant/merchant_details",
+					"pathName": "pageB/pages/merchant/merchant_details",
+					"query": "spid=1&takeaway_platform=2&sid=118&tid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "components/merchant-list/merchant-list/",
+					"scene": null
+				}
+			]
+		}
+	}
+}

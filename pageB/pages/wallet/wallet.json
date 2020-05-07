@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "authorize": "/components/authorize/authorize",
+    "wux-dialog": "../../../pages/dist/dialog/index" 
+  },
+  "navigationBarBackgroundColor": "#e83322",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "红包"
+}

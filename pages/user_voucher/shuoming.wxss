@@ -1,0 +1,12 @@
+.share {
+  width: 350rpx;
+  height: 90rpx;
+  padding: 0 20rpx;
+
+  background-size: 18rpx 18rpx;
+  background-repeat: no-repeat;
+  background-color: rgb(201, 27, 27);
+  color: #fff;
+  border-radius: 98rpx;
+  border: none;
+}

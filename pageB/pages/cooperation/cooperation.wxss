@@ -1,0 +1,64 @@
+/* pageB/pages/cooperation/cooperation.wxss */
+page{
+  background: white;
+}
+.banner{
+  width: 720rpx;
+  height: 180rpx;
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+  border-radius: 10rpx; 
+}
+.demo{
+  position: relative;
+  margin-top: 20rpx;
+  height: 130rpx;
+  border-top: 1rpx solid #F4F4F4;
+  border-bottom: 1rpx solid #F4F4F4;
+}
+.demo2{
+  position: relative;
+  height: 130rpx;
+}
+.demo3{
+  position: relative;
+  height: 130rpx;
+  border-top: 1rpx solid #F4F4F4;
+  border-bottom: 1rpx solid #F4F4F4;
+}
+.demo-img{
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  left: 34rpx;
+  top: 36rpx;
+}
+.demo-size{
+  font-size: 30rpx;
+  color: #101010;
+  position: absolute;
+  top: 32rpx;
+  left: 124rpx;
+}
+.demo-size1{
+  font-size: 22rpx;
+  color: #666666;
+  position: absolute;
+  top: 74rpx;
+  left: 124rpx;
+}
+.btn{
+  border: 1rpx solid #E83422;
+  color: #E83422;
+  font-size: 28rpx;
+  width: 154rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  padding: 0rpx 10rpx;
+  border-radius: 6rpx;
+  position: absolute;
+  left: 566rpx;
+  top: 42rpx;
+}

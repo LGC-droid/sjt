@@ -1,0 +1,28 @@
+<!--pages/reward/reward.wxml-->
+<i-tabs current="{{ current }}" color="#E83322" bindchange="handleChange">
+	<i-tab key="tab1" title="注册用户（{{register_count||0}}）"></i-tab>
+	<i-tab key="tab2" title="下单用户（{{complete_count||0}}）"></i-tab>
+</i-tabs>
+<view wx:if="{{tab1}}">
+	<view class="accumulation">注册已获:￥{{register_bonus * subordinate_user_list.length||0}}</view>
+	<view class="demo" wx:for="{{subordinate_user_list}}">
+		<image class="imgs" src="{{item.avatar}}"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">{{item.nickname}}</view>
+			<view class="demo-size-mini2">注册时间： {{item.registration_time}}</view>
+		</view>
+		<view class="demo-money">+{{register_bonus}}</view>
+	</view>
+ 
+</view>
+<view wx:if="{{tab2}}">
+	<view class="accumulation">下单已获:￥{{complete_bonus * subordinate_user_list.length||0}}</view>
+ <view class="demo" wx:for="{{subordinate_user_list}}">
+		<image class="imgs" src="{{item.avatar}}"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">{{item.nickname}}</view>
+			<view class="demo-size-mini2">注册时间： {{item.registration_time}}</view>
+		</view>
+		<view class="demo-money">+{{complete_bonus}}</view>
+	</view>
+</view>

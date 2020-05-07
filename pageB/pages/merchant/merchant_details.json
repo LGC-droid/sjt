@@ -1,0 +1,11 @@
+  
+{
+  "usingComponents": {
+    "popuppictureandsave": "/components/popuppictureandsave/index",
+    "navbar": "/components/navbar/index",
+    "authorize": "/components/authorize/authorize",
+    "i-row": "../../../pages/dist/row/index",
+    "i-col": "../../../pages/dist/col/index",
+    "i-modal": "../../../pages/dist/modal/index"
+  } 
+}

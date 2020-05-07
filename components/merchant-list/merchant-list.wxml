@@ -1,0 +1,53 @@
+<swiper-item style="overflow:visible ">
+	<view id="poilist" class="list" bindtap="dianmian" wx:if="{{is_merchant}}">
+		<navigator url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{merchant}}">
+			<view class="field">
+				<view class="res-pos">
+					<image class="shop-img {{takeaway_platform ==1 ? 'mt_border_logo': 'elm_border_logo'}}" mode="aspectFit" src="{{item.elm_logo_image}}"></image>
+					<view wx:if="{{item.is_business_hours==0}}">
+						<image src="../../imgs/rest.png" class="rests"></image>
+					</view>
+				</view>
+				<view class="content">
+					<view class="shop-name">
+						<view class="shop-na"> {{takeaway_platform ==1 ? item.mt_mname:item.elm_mname}}</view>
+						<view class="shop-right">{{item.distance}}</view>
+					</view>
+					<view class="shop-mid-line ">
+						<!-- <label style=" background:rgb(220,93,84);" class="top">减</label> -->
+						<image src="/imgs/jian.png" class="jian"></image>
+						<text class="shop-sold" decode="{{true}}">{{takeaway_platform ==1 ? item.mt_manjian:item.elm_manjian}}</text>
+						<!-- <view class="shop-delivery-time">限美团</view> -->
+					</view>
+					<view class="exps">
+					</view>
+					<view class="jindutiao">
+						<text class="jindu">已抢{{item.percentage}}%</text>
+						<!-- 我是进度条 -->
+						<wux-progress stroke-width="8" wux-class="progress" activeColor="#E83422" backgroundColor="#F5C2BD" status="progress" percent="{{item.percentage}}" />
+						<!-- <view class="weui-progress">
+								<view class="weui-progress__bar">
+								
+								</view>
+							</view> -->
+					</view>
+					<view class="exp">
+						<view class=" lbyj3">返现金额￥{{item.commission}}</view>
+						<view class="vipshop" wx:if="{{item.is_member_cashback_increases}}">会员红包</view>
+						<view class="vipshops" wx:if="{{item.is_dingding_cashback_increases}}">叮叮联盟</view>
+						<!-- <view class="shop-delivery-time">限饿了么</view> -->
+					</view>
+					<view wx:if="{{item.is_business_hours==0}}">
+						<image class="haubu" src="../../imgs/huabu.png"></image>
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+	<view class="field-load" wx:if="{{!is_merchant}}">
+		<view class="field-load-loading">暂无商家列表~</view>
+	</view>
+	<view class="field-load" wx:if="{{is_jiazai}}">
+		<view class="field-load-loading">{{is_jiazai_val}}</view>
+	</view>
+</swiper-item>

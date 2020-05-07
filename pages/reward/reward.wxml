@@ -1,0 +1,91 @@
+<!--pages/reward/reward.wxml-->
+<i-tabs current="{{ current }}" color="#E83322" bindchange="handleChange">
+	<i-tab key="tab1" title="注册用户（5）"></i-tab>
+	<i-tab key="tab2" title="下单用户（5）"></i-tab>
+</i-tabs>
+<view wx:if="{{tab1}}">
+	<view class="accumulation">注册已获:￥15.00</view>
+	<view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">你是疯子</view>
+			<view class="demo-size-mini2">注册时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">你是疯子</view>
+			<view class="demo-size-mini2">注册时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">你是疯子</view>
+			<view class="demo-size-mini2">注册时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">你是疯子</view>
+			<view class="demo-size-mini2">注册时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">你是疯子</view>
+			<view class="demo-size-mini2">注册时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+</view>
+<view wx:if="{{tab2}}">
+	<view class="accumulation">下单已获:￥15.00</view>
+	<view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">我是啥子</view>
+			<view class="demo-size-mini2">下单时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">我是啥子</view>
+			<view class="demo-size-mini2">下单时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">我是啥子</view>
+			<view class="demo-size-mini2">下单时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">我是啥子</view>
+			<view class="demo-size-mini2">下单时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+  <view class="demo">
+		<image class="imgs" src="../../imgs/icon4.png"></image>
+		<view class="demo-size">
+			<view class="demo-size-mini1">我是啥子</view>
+			<view class="demo-size-mini2">下单时间： 2016-10-10</view>
+		</view>
+		<view class="demo-money">+1.00</view>
+	</view>
+</view>

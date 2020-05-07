@@ -1,0 +1,50 @@
+<wux-select id="wux-select1" />
+<wux-calendar id="wux-calendar" />
+<wux-dialog id="wux-dialog" />
+<wux-dialog id="wux-dialog--alert" />
+<wux-toast id="wux-toast" />
+<view class=" {{scrollTop>0 ? 'topnavFixed' : 'flexd-h'}}">
+	<view class="size-h" bindtap="onClick1">{{title1}} ﹀</view>
+	<!-- <view class="size-z" bindtap="onClick2">{{title2}} ﹀</view> -->
+</view>
+<view class="day">
+	<view bindtap="openCalendar1" class="time-size">{{starttime}}</view>
+	<view class="zhi">至</view>
+	<view bindtap="openCalendar2" class="time-size">{{endtime}}</view>
+</view>
+
+<view class="single">
+	累计：{{danshu}}单
+</view>
+<view wx:for="{{list}}">
+	<view class="demo">
+		<view class="up-box">
+			<view class="mini-demo">
+				<text class="time">下单时间：</text><text class="times">{{item.create_time}}</text>
+			</view>
+			<view class="mini-demo2">
+				<text class="proportion">佣金比例：</text><text class="proportions">{{item.proportion}}%</text>
+			</view>
+			<image class="class-a" src="{{item.fenxiao=='直属'?'../../img/classA.png':'../../img/classB.png'}}"></image>
+		</view>
+		<view class="lower-box">
+			<view class="lower-size">
+				<view wx:if="{{item.task_title}}">
+					<text class="text1">返现门店：</text>
+					<text class="text2" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;{{item.task_title}}</text>
+				</view>
+				<view class="tex" wx:if="{{item.task_commission}}">
+					<text class="text1">返现金额：</text>
+					<text class="text3" decode="{{true}}" space="{{true}}">&nbsp;&nbsp;￥{{item.task_commission}}</text>
+				</view>
+			</view>
+			<view class="low-s">
+				<text class="text4">为我提供收益</text>
+				<text class="text5">￥{{item.money}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<authorize bind:onLoadFun='onLoadFun'></authorize>

@@ -1,0 +1,96 @@
+<image class="noimgs" wx:if="{{is_banners}}" bindtap="tapBanner" data-target="Image" data-type="{{banners.type}}" data-link="{{banners.link}}" src="{{banners.image}}"></image>
+<view class="dis-btn">
+	<view class="look" bindtap="commentary">返现规则不懂看这里</view>
+	<image class="rujing" src="../../imgs/rujing.png"></image>
+	<view class="elm-btn" bindtap="commentaryelm">饿了么</view>
+	<view class="mt-btn" bindtap="commentarymt">美团</view>
+</view>
+<view class="dwview" wx:for="{{orderInfo}}" data-item="{{item}}">
+	<view class="dwview-head">
+		<image wx:if="{{item.takeaway_platform==1}}" class="logo" src="../../imgs/mth.png"></image>
+		<image class="logo" wx:else src="../../imgs/elml.png"></image>
+		<view class="times">{{item.add_time}}</view>
+		<view class="stutas" wx:if="{{item.is_bwc!=1  && item.rate_of_progress ==0}}">未提交</view>
+		<view class="stutas" wx:if="{{item.is_bwc!=1  && item.rate_of_progress ==-1}}">重新提交</view>
+		<view class="stutas" wx:if="{{item.is_bwc!=1  && item.rate_of_progress ==1}}">审核中</view>
+	</view>
+	<view class="deview-demo" bindtap="details" data-task_id="{{item.task_id}}" data-is_bwc="{{item.is_bwc}}" data-uid="{{item.uid}}" data-sid="{{item.merchant_id}}" data-takeaway_platform="{{item.takeaway_platform}}">
+		<view class="vips-orders" wx:if="{{item.is_bwc==1}}">请于{{item.order_validity}}前提交</view>
+		<image class="demo-img" src="{{item.logo_image ? item.logo_image : '/imgs/tabBar/elm_h.png'}}"></image>
+		<view class="demo-name">{{item.task_title}}</view>
+		<view class="demo-size">
+			<text class="mini-size2">总返现￥{{item.total_commission}}</text>
+			<text class="mini-size"> (普通返现￥{{item.task_commission||0}} </text>
+			<text class="mini-size1" wx:if="{{item.uci_id}}">+增值券返现￥{{item.cashback_increases_value}}</text>
+			<text class="mini-size">)</text>
+		</view>
+	</view>
+	<view class="demo-demo" wx:if="{{item.rate_of_progress ==0 && item.is_bwc==0}}" data-oid="{{item.id}}" data-index="{{index}}" bindtap="ChoiceCashbackIncreases">
+		<view class="demo-demo-demo">
+			<image class="demo-demo-img" src="../../imgs/envelopes.png"></image>
+			<view class="demo-demo-size1">增值红包</view>
+		</view>
+		<view class="{{item.cashback_increases_value== 0?'demo-demo-size2 ':'demo-demo-size3'}}">
+			{{item.cashback_increases_value== 0?'红包增值券':'+￥'+item.cashback_increases_value}}
+			<image class="cell" src="../../imgs/return2.png"></image>
+		</view>
+	</view>
+	<view class="demo-btn">
+		<button id="cancels" class="cancel" plain="true" data-tid="{{item.task_id}}" data-oid="{{item.id}}" bindtap="cancel_order">取消任务</button>
+		<view wx:if="{{item.takeaway_platform==1}}">
+			<button id="mt-increments" class="mt-increment" data-mt_id="{{item.mt_id}}" formType="submit" openType="getUserInfo" bindtap="jumpDetails_mt">美团下单</button>
+			<button id="mt-uploads" class="mt-upload" bindtap="showList" plain="true" data-id="{{item.id}}">
+				{{item.isShow?'收起':'上传凭证'}}</button>
+		</view>
+		<view wx:else>
+			<button id="increments" class="increment" formType="submit" data-elm_id="{{item.elm_id}}" openType="getUserInfo" bindtap="jumpDetails_elm">饿了么下单</button>
+			<button id="uploads" class="upload" bindtap="showList" plain="true" data-id="{{item.id}}">
+				{{item.isShow?'收起':'上传凭证'}}</button></view>
+	</view>
+	<view class=" {{item.isShow?'show':'hide'}}">
+		<view class="ziti" style="color:#e93323" wx:if="{{item.fail_reason}}">审核失败原因:{{item.fail_reason}}</view>
+		<i-row class="sss">
+			<i-col span="6" i-class="col-class">
+				<view class="ziti">订单编号:</view>
+			</i-col>
+			<i-col span="18" i-class="col-class">
+				<input type="number" data-index="{{index}}" value="{{item.order_num}}" placeholder="请输入订单号" bindinput="order_num" class="shurux"></input>
+			</i-col>
+		</i-row>
+		<i-row wx:if="{{item.is_elm_open_upload_pictures || item.takeaway_platform==1}}">
+			<i-col span="6" i-class="col-class">
+				<view class="dingdan">上传凭证:</view>
+			</i-col>
+			<i-col span="18" i-class="col-class">
+				<view style="padding-bottom: 40rpx;">
+					<image class="image1" data-index="{{index}}" data-oid="{{item.id}}" data-rate_of_progress="{{item.rate_of_progress}}" style="margin-left:9rpx" bindtap='chooseImage' data-cer_name='haoping_images' src="{{item.haoping_imagesxs ? item.haoping_imagesxs : '/imgs/elm2.png'}}"></image>
+					<image class="image1" data-oid="{{item.id}}" data-rate_of_progress="{{item.rate_of_progress}}" data-index="{{index}}" style="margin-left: 22rpx;" bindtap='chooseImage' data-cer_name='det_images' src="{{item.det_imagesxs ? item.det_imagesxs : '/imgs/elm1.png'}}"></image>
+				</view>
+				<view class="wuxing">
+					<text class="juli">带文字五星好评</text>
+					<text class="juli2">订单详情页面</text>
+				</view>
+			</i-col>
+			<i-col span="1" i-class="col-class">
+			</i-col>
+		</i-row>
+		<view class="remarks-demo">
+			<view class="remarks-name">备注:</view>
+			<input bindinput="reason_wap_explain" class="remarks" data-index="{{index}}" value="{{item.reason_wap_explain}}" placeholder="选填"></input>
+		</view>
+		<view class="buju">
+			<button id="btn-xs" plain="true" class='buttonx' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" wx:if="{{mobile==''}}">
+				提交审核
+			</button>
+			<button wx:elif="{{item.rate_of_progress ==1}}" id="btn-xs" plain="true" class='buttonx' disabled="disabled" form-type="submit">审核中</button>
+			<button data-oid="{{item.id}}" data-index="{{index}}" id="btn-xs" plain="true" wx:elif="{{item.rate_of_progress ==0}}" class='buttonx' bindtap="subRefund">提交审核</button>
+			<button data-oid="{{item.id}}" data-index="{{index}}" id="btn-xs" plain="true" wx:elif="{{item.rate_of_progress ==-1}}" class='buttonx' bindtap="subRefund">重新审核</button>
+		</view>
+	</view>
+</view>
+<view class="sssssss"></view>
+<view>
+	<image wx:if="{{orderInfo.length==0}}" class="kong" src="../../imgs/nooder.png"></image>
+</view>
+<authorize bind:onLoadFun="onLoadFun"></authorize>
+<popuppictureandsave showRule="{{showRule}}"></popuppictureandsave>

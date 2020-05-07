@@ -1,0 +1,11 @@
+<view class='home' style=" top:{{top*2}}rpx;" catchtouchmove="setTouchMove">
+   
+        <view class='homeCon bg-color acea-row row-column-between {{homeActive==true?"on":""}}'>
+          <navigator hover-class='none' url='/pages/index/index'  open-type='switchTab' class='iconfont icon-shouye-xianxing'></navigator>
+          <navigator hover-class='none' url='/pages/user_order/index?state=jinxing'  open-type='navigate' class='iconfont icon-yingyongchengxu-xianxing'></navigator>
+          <navigator hover-class='none' url='/pages/user/user'  open-type='switchTab' class='iconfont icon-yonghu1'></navigator>
+<!--         
+          <button style="color:#fff;border: 0;background-color: transparent;outline: none" class='iconfont icon-kefu_o' open-type='contact' hover-class='none'></button> -->
+      </view>
+   <view class='pictrue' bindtap='open'><image src='{{homeActive==false?"/imgs/close.gif":"/imgs/open.gif"}}'></image></view>
+</view>

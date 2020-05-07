@@ -1,0 +1,80 @@
+<navbar parameter='{{parameter}}'></navbar>
+<!-- <view wx:if="{{is_merchants}}"> -->
+<view class="pages">
+  <view class="swiper-container" wx:if="{{merchants.logo_image}}">
+    <image   src="{{merchants.logo_image}}" mode="widthFix" />
+  </view>
+ 
+
+  
+ <view  class="banner" >
+    <view class="banner_list flex-bet">
+        <view class="list_all flex-center"> 
+            <view class="list_alltext">商家名称：</view>
+            <view class="list_alltext">{{merchants.uname}}</view>
+        </view> 
+    </view>
+</view> 
+ <view  class="banner" >
+    <view class="banner_list flex-bet">
+        <view class="list_all flex-center"> 
+            <view class="list_alltext">商家电话：</view>
+            <view class="list_alltext">{{merchants.phone}}</view>
+        </view> 
+    </view>
+</view> 
+ <view  class="banner" >
+    <view class="banner_list flex-bet">
+        <view class="list_all flex-center"> 
+            <view class="list_alltext">商家地址：</view>
+            <view class="list_alltext">{{merchants.address}}</view>
+        </view> 
+    </view>
+</view> 
+ <view class="share-c-txt">
+  —— 本店任务 —— 
+  </view>  
+<view class="list">
+  <view class="listbox">
+    <view bindtap="dask_det" data-id="{{item.id}}" wx:for="{{task_lst}}" wx:key="{{item}}">
+      <view class="list-item">
+        <view class="list-r">
+          <view class="list-title">
+            <view class="name">
+              <label class="guan" >抢</label>
+              <label class="top">热</label>{{item.title}}
+            </view>
+          </view>
+          <view class="list-b-item">
+            <view class="list-b-item-left">
+              <label class="rwfqr">已抢：{{item.percentage}}% </label> 
+            </view> 
+            <view class="list-statebox">
+              <view class="state over" wx:if="{{item.rate_of_progress==2}}">已结束</view>
+              <view class="state ing" wx:else>进行中</view>
+            </view>
+          </view>
+             <view class="list-b-item">
+            <progress percent="{{item.percentage}}" color="#fcaf09" stroke-width="3" />
+            </view>
+         
+          <view class="list-b-item">
+            <view class="list-b-item-left">
+              <image class="img" src="/imgs/join.png" wx:if="{{item.islingqu>-1}}"></image>
+              <label class="jointxt" wx:if="{{item.islingqu>-1}}">{{item.lingqutxt}} |</label>
+              <label class="price">佣金：{{item.commission}}</label>
+            </view>
+            <view class="list-look">
+              任务总数量：{{item.task_sum}}
+            </view>
+          </view>
+          <view></view>
+        </view>
+      </view>
+      <!-- <view class="list-item" wx:if="{{index%2}}">
+        <ad unitId="adunit-c054bf30944867c4"></ad>
+      </view> -->
+    </view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,230 @@
+/* pages/member/member.wxss */
+page {
+  background: #F5F5F5;
+}
+
+.head {
+  background: #322D2C;
+  width: 100%;
+  height: 310rpx;
+  position: relative;
+}
+
+.heads {
+  background: #322D2C;
+  width: 100%;
+  height: 310rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.head-img {
+  position: absolute;
+  width: 70rpx;
+  height: 70rpx;
+  top: 22rpx;
+  left: 30rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.phone {
+  position: absolute;
+  left: 122rpx;
+  top: 20rpx;
+  color: white;
+  font-size: 28rpx;
+  font-family: PingFangSC-regular;
+}
+
+.member {
+  position: absolute;
+  left: 122rpx;
+  top: 60rpx;
+  color: white;
+  font-size: 20rpx;
+  font-family: PingFangSC-regular;
+}
+
+.head-demo {
+  background: linear-gradient(360deg, #171717 0%, #373231 100%);
+  width: 690rpx;
+  height: 190rpx;
+  position: absolute;
+  top: 120rpx;
+  left: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15rpx;
+
+}
+
+.head-size1 {
+  color: #FFFFFF;
+  font-size: 26rpx;
+}
+
+.head-size2 {
+  color: #FFFFFF;
+  font-size: 22rpx;
+}
+
+.head-size3 {
+  color: #FFFFFF;
+  font-size: 100rpx;
+
+}
+
+.head-size4 {
+  color: #FFFFFF;
+  font-size: 26rpx;
+}
+
+.head-size5 {
+  color: #FFFFFF;
+  font-size: 22rpx;
+}
+
+.neck {
+  width: 690rpx;
+  height: 230rpx;
+  background: linear-gradient(90deg, #fae3cd 0%, #ecc9aa 100%);
+  border-radius: 28rpx;
+  margin-left: 30rpx;
+  position: relative;
+  margin-top: -30rpx;
+
+}
+
+.necks {
+  width: 690rpx;
+  height: 230rpx;
+  background: linear-gradient(90deg, #fae3cd 0%, #ecc9aa 100%);
+  border-radius: 28rpx;
+  margin-left: 30rpx;
+  position: absolute;
+  top: 115rpx;
+
+
+}
+
+.xian {
+  width: 2rpx;
+  height: 92rpx;
+}
+
+.renew {
+  font-size: 28rpx;
+  color: #101010;
+  width: 190rpx;
+  height: 64rpx;
+  line-height: 56rpx;
+  border-radius: 40rpx;
+  position: absolute;
+  top: 114rpx;
+  right: 35rpx;
+
+}
+
+.use {
+  width: 126rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border-radius: 6rpx 6rpx 6rpx 6rpx;
+  background: #EECAAB;
+  text-align: center;
+  font-size: 26rpx;
+  color: #101010;
+  position: absolute;
+  top: 130rpx;
+  left: 34rpx;
+}
+
+.uses {
+  font-size: 26rpx;
+  color: #101010;
+  position: absolute;
+  top: 130rpx;
+  left: 34rpx;
+}
+
+.ddhy {
+  position: absolute;
+  font-size: 40rpx;
+  color: #101010;
+  font-weight: bold;
+  font-family: PingFangSC-bold;
+  top: 56rpx;
+  left: 34rpx;
+}
+
+.money-month {
+  position: absolute;
+  top: 58rpx;
+  right: 35rpx;
+  font-size: 28rpx;
+  color: #101010;
+}
+
+.neck-img {
+  width: 720rpx;
+height: 180rpx;
+margin-left: 15rpx;
+margin-top: 36rpx;
+border-radius: 10rpx;
+
+}
+
+.privilege {
+  font-size: 28rpx;
+  color: #101010;
+  margin-left: 24rpx;
+  margin-top: 30rpx;
+
+}
+
+.demo {
+  width: 710rpx;
+  height: 300rpx;
+  border-radius: 6rpx;
+  box-shadow: 0rpx 2rpx 10rpx 0rpx #d2d2d2;
+  margin-left: 20rpx;
+  margin-top: 24rpx;
+  position: relative;
+  background: white;
+
+}
+
+.demo-img {
+  width: 600rpx;
+  height: 172rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 55rpx;
+  box-shadow: 0rpx 2rpx 12rpx 0rpx #DDDDDD;
+  border-radius: 10rpx;
+}
+
+.first {
+  position: absolute;
+  width: 90rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: #483C30;
+  border-radius: 6rpx;
+  left: 32rpx;
+  top: 40rpx;
+  background: #EDD5A0;
+  text-align: center;
+
+}
+
+.receive {
+  color: #101010;
+  font-size: 28rpx;
+  position: absolute;
+  left: 150rpx;
+  top: 40rpx;
+}

@@ -1,0 +1,58 @@
+<!--pages/cate_list/cate_lists.wxml-->
+<!-- <navbar parameter='{{parameter}}'></navbar> -->
+<import src="../../components/sort_list.wxml" />
+
+<!-- 商家列表 -->
+<view class="section">
+	<view class="near"></view>
+	<view id="poilist" class="list" bindtap="dianmian" wx:if="{{is_merchant}}">
+		<navigator url="../../pageB/pages/merchant/merchant_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{recommend_merchant}}">
+			<view class="field">
+				<view class="avatar">
+					<image class="shop-img {{takeaway_platform ==1 ? 'mt_border_logo': 'elm_border_logo'}}" mode="aspectFit" src="{{item.elm_logo_image}}"></image>
+				</view>
+				<view class="content">
+					<view class="shop-name">
+						<view class="shop-na"> {{takeaway_platform ==1 ? item.mt_mname:item.elm_mname}}</view>
+						<view class="shop-right">{{item.distance}}</view>
+					</view>
+					<view class="shop-mid-line ">
+						<!-- <label style=" background:rgb(220,93,84);" class="top">减</label> -->
+						<image src="/imgs/jian.png" class="jian"></image>
+						<text class="shop-sold" decode="{{true}}">{{takeaway_platform ==1 ? item.mt_manjian:item.elm_manjian}}</text>
+						<!-- <view class="shop-delivery-time">限美团</view> -->
+					</view>
+					<view class="exps">
+					</view>
+					<view class="jindutiao">
+						<text class="jindu">已抢{{item.percentage}}%</text>
+						<!-- 我是进度条 -->
+						<view class="weui-progress">
+							<view class="weui-progress__bar">
+								<progress color="{{takeaway_platform ==1 ? mtprogreen:elmprogreen}}" percent="{{item.percentage}}" stroke-width="3" style=" width: 380rpx;" />
+							</view>
+						</view>
+					</view>
+					<view class="exp">
+						<view style="  background-color: #e83422;" class=" lbyj3">返现金额￥{{item.commission}}</view>
+						<!-- <view class="shop-delivery-time">限饿了么</view> -->
+					</view>
+				</view>
+			</view>
+		</navigator>
+	</view>
+	<view class="field-load" wx:if="{{!is_merchant}}">
+		<view class="field-load-loading">暂无商家列表~</view>
+	</view>
+	<view class="field-load" wx:if="{{is_jiazai}}">
+		<view class="field-load-loading">{{is_jiazai_val}}</view>
+	</view>
+
+</view>
+<view>
+
+	<!-- <image src="/imgs/order.png" class="img-plus-style" bindtap="renwu"></image> -->
+
+</view>
+
+<home></home>

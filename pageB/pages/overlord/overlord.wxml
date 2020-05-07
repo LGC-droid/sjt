@@ -1,0 +1,26 @@
+<!--pages/overlord/overlord.wxml-->
+<view class="titles">
+	<image class="lightning" src="../../img/lightning.png"></image>
+	<view class="title"> 每天10点半更新开抢</view>
+</view>
+<view class="title2">1元秒杀 等你来抢</view>
+
+<view class="title3" wx:if="{{bwc_status.is_start_robbing==0}}">距离开抢时间还有 {{c5}}</view>
+<view wx:else class="title3">抢购已开始</view>
+<view class="flexd">
+	<navigator class="demo" url="../overlord/overlord_details?sid={{item.id}}&tid={{item.tid}}&takeaway_platform={{takeaway_platform}}&latitude={{latitude}}&longitude={{longitude}}" wx:for="{{recommend_merchant}}">
+		<image src="{{takeaway_platform ==1 ? item.mt_logo_image:item.elm_logo_image}}" class="demo-ban"></image>
+		<view class="demo-name">{{takeaway_platform ==1 ? item.mt_mname:item.elm_mname}}</view>
+		<view class="symbol">返￥</view>
+		<view class="price">{{item.commission}}</view>
+		<view class="distance">{{item.distance}}</view>
+		<view class="platform">{{takeaway_platform==1?'美团':'饿了么'}}</view> 
+		<image class="platform-logo" src="{{takeaway_platform==1?'../../img/mt1_Y.png':'../../img/elm_b.png'}}"></image>
+		<wux-progress wux-class="progress" activeColor="#E83422" backgroundColor="#F5C2BD" status="progress" percent="{{item.percentage >=100 ?100:item.percentage}}" />
+		<view class="surplus">已抢{{item.percentage}}%</view>
+		<image class="overload" src="../../img/overlord.png"></image>
+		<image wx:if="{{item.percentage >=100 && item.is_business_hours==1}}" class="menb" src="../../img/menb.png"></image>
+		<image wx:elif="{{item.is_business_hours==0}}" class="menb" src="../../img/resr.png"></image>
+	</navigator>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>

@@ -1,0 +1,225 @@
+/* pages/wallet/wallet.wxss */
+page {
+  background: #F8F8F8;
+}
+
+.demo {
+  margin-left: 25rpx;
+  margin-top: 34rpx;
+
+}
+
+.demo-up {
+
+  background: white;
+  width: 700rpx;
+  height: 140rpx;
+  position: relative;
+}
+
+.demo-down {
+  width: 700rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  background: white;
+  border-top: 1rpx solid #F5F5F5;
+
+}
+
+.money {
+  color: #E82B19;
+  font-size: 28rpx;
+  position: absolute;
+  top: 47rpx;
+  left: 80rpx;
+}
+
+.number {
+  position: absolute;
+  top: 27rpx;
+  left: 104rpx;
+  color: #E82B19;
+  font-size: 48rpx;
+}
+
+.name {
+  position: absolute;
+  color: #101010;
+  font-size: 28rpx;
+  top: 39rpx;
+  left: 220rpx;
+
+}
+
+.time {
+  color: #101010;
+  font-size: 18rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 220rpx;
+}
+
+.btn {
+  background: #F7A526;
+  width: 140rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 24rpx;
+  padding: 0rpx 10rpx;
+  position: absolute;
+  left: 536rpx;
+  top: 58rpx;
+}
+
+.size {
+  font-size: 20rpx;
+  margin-left: 76rpx;
+  color: #3D3D3E;
+}
+
+.yuan {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  background: #F8F8F8;
+  position: absolute;
+  left: -19rpx;
+  top: 120rpx;
+}
+
+.yuan1 {
+  width: 38rpx;
+  height: 38rpx;
+  border-radius: 50%;
+  background: #F8F8F8;
+  position: absolute;
+  right: -19rpx;
+  top: 120rpx;
+}
+
+
+.coupon {
+  color: #E82B19;
+  font-size: 22rpx;
+  position: absolute;
+  top: 88rpx;
+  left: 80rpx;
+}
+.margin-left-sm {
+  position: absolute;
+  right: 46rpx;
+	top: 58rpx;
+}
+.demo-up2 {
+
+  background: #FEFEFE;
+  width: 700rpx;
+  height: 140rpx;
+  position: relative;
+}
+
+.demo-down2 {
+  width: 700rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  background: #FEFEFE;
+  border-top: 1rpx solid #F5F5F5;
+
+}
+
+.money2 {
+  color: #E4E4E4;
+  font-size: 28rpx;
+  position: absolute;
+  top: 47rpx;
+  left: 80rpx;
+}
+
+.number2 {
+  position: absolute;
+  top: 27rpx;
+  left: 104rpx;
+  color: #E4E4E4;
+  font-size: 56rpx;
+}
+
+.name2 {
+  position: absolute;
+  color: #E4E4E4;
+  font-size: 28rpx;
+  top: 46rpx;
+  left: 220rpx;
+
+}
+
+.time2 {
+  color: #E4E4E4;
+  font-size: 18rpx;
+  position: absolute;
+  top: 100rpx;
+  left: 220rpx;
+}
+
+
+
+.size2 {
+  font-size: 20rpx;
+  margin-left: 76rpx;
+  color: #626262; 
+}
+
+
+
+
+.coupon2 {
+  color: #E4E4E4;
+  font-size: 22rpx;
+  position: absolute;
+  top: 88rpx;
+  left: 80rpx;
+}
+.kong{
+  width: 100%;
+  height: 585rpx;
+  margin-top: 108rpx;
+}
+.open-btn{
+  width: 458rpx;
+  height: 72rpx;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 36rpx;
+  background: #E83322;
+  border-radius: 50rpx;
+  line-height: 72rpx;
+  margin-top: 80rpx;
+}
+
+.shuoming-img {
+  width: 28rpx;
+  height: 28rpx;
+}
+.shuoming{
+  display: flex;
+  background: #FBF1DE;
+  width: 100%;
+  justify-content: space-between;
+  height: 52rpx;
+  align-items: center;
+}
+.quick {
+  font-size: 24rpx;
+  color: #E83422;
+  margin-right: 26rpx;
+}
+.shuoming-demo{
+  display: flex;
+  margin-left: 34rpx;
+}
+.shuoming-size{
+  font-size: 24rpx;
+  color: #5D5B4B;
+  margin-left: 12rpx;
+}

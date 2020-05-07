@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wux-select": "../../../pages/dist/select/index",
+    "wux-calendar": "../../../pages/dist/calendar/index",
+    "wux-toast": "../../../pages/dist/toast/index",
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white", 
+  "navigationBarTitleText": "收益订单"
+}

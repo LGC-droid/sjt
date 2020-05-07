@@ -1,0 +1,146 @@
+.field {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+}
+.field-load-loading {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #888;
+  background-color: #eee;
+}
+.field .content {
+  flex-grow: 1;
+  margin-left: 25rpx;
+  position: relative;
+}
+.res-pos {
+  position: relative;
+}
+
+.shop-img {
+  border-radius: 16rpx;
+  width: 190rpx;
+  height: 190rpx;
+  border: 1px solid #f8f8f8;
+}
+.rests {
+  position: absolute;
+  width: 190rpx;
+  height: 44rpx;
+  left: 3rpx;
+  top: 151rpx;
+}
+.field .content {
+  flex-grow: 1;
+  margin-left: 25rpx;
+  position: relative;
+}
+.shop-right {
+  margin-top: 10rpx;
+  margin-left: -20px;
+  font-size: 22rpx;
+  color: #666;
+}
+
+.shop-mid-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 17rpx;
+}
+.jian {
+  width: 28rpx;
+  height: 28rpx;
+  padding-top: 0px;
+}
+.shop-sold {
+  font-size: 20rpx;
+  color: #6A6868;
+  margin: 0 10rpx;
+}
+.exps {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 9rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+.jindutiao {
+  display: flex;
+  margin-top: 12rpx;
+}
+
+.jindu {
+  font-size: 22rpx;
+  width: 130rpx;
+  color: #101010;
+  /*0396fd*/
+}
+
+.progress {
+  margin-top: 8rpx;
+  margin-left: -10rpx;
+  width: 350rpx;
+}
+.exp {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 20rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+
+.lbyj3 {
+  height: 34rpx;
+  font-weight: bold;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: #E83422;
+  border: 1rpx solid #E8C3BB;
+}
+.vipshop {
+  background: #FFFFFF;
+  color: #C38E42;
+  border: 1rpx solid #F0C588;
+  font-size: 20rpx;
+  padding: 0rpx 10rpx;
+  margin-left: 15rpx;
+  border-radius: 6rpx;
+  height: 34rpx;
+  display: flex;
+  align-items: center;
+
+}
+
+.vipshops {
+  background: #FFFFFF;
+  color: #EC5F3F;
+  border: 1rpx solid #F8DEDA;
+  font-size: 20rpx;
+  padding: 0rpx 10rpx;
+  margin-left: 15rpx;
+  border-radius: 6rpx;
+  height: 34rpx;
+  display: flex;
+  align-items: center;
+
+}
+
+.haubu {
+  width: 500rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 0rpx;
+
+}

@@ -1,0 +1,50 @@
+<navbar parameter='{{parameter}}'></navbar>
+<view class="page">
+	<view class="yqylbox">
+		<view class="walletbox">
+			<view class="mtitle">账户余额</view>
+			<view class="moneybox">￥{{capital}}元</view>
+		</view>
+		<view class="yqyl-menu">
+			<view>
+				<view bindtap="order" class="yqyl-menu-item" data-uid="{{uid}}" data-type="{{type}}">
+					<view class="yqyl-menu-item-1">
+						账单记录
+					</view>
+					<view class="yqyl-menu-item-2">
+						<image src="../../img/huise@2x.png"></image>
+					</view>
+				</view>
+				<view bindtap="tx" class="yqyl-menu-item" wx:if="{{type !='merchant'}}">
+					<view class="yqyl-menu-item-1">
+						提现
+					</view>
+					<view class="yqyl-menu-item-2">
+						<image src="../../img/huise@2x.png"></image>
+					</view>
+				</view>
+				<view bindtap="recharge" class="yqyl-menu-item" wx:if="{{type =='merchant'}}">
+					<view class="yqyl-menu-item-1">
+						充值
+					</view>
+					<view class="yqyl-menu-item-2">
+						<image src="../../img/huise@2x.png"></image>
+					</view>
+				</view>
+				<!-- <view class="yqyl-menu-item">
+        <button class="" openType="contact">
+          <view class="yqyl-menu-item-1">
+            联系客服
+          </view>
+          <view class="yqyl-menu-item-2">
+            <image src="../../img/huise@2x.png"></image>
+          </view>
+        </button>
+      </view> -->
+			</view>
+
+		</view>
+	</view>
+</view>
+<authorize bind:onLoadFun='onLoadFun'></authorize>
+<!-- <home></home> -->

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "wux-button": "../../../pages/dist/button/index",
+    "wux-circle": "../../../pages/dist/circle/index",
+    "authorize": "/components/authorize/authorize"
+  },
+  "navigationBarBackgroundColor": "#E83322",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "合伙人等级"
+}
